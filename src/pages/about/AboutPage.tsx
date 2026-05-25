@@ -22,7 +22,7 @@ export function AboutPage() {
             Precision <br/><span className="text-secondary bg-clip-text text-transparent bg-gradient-to-r from-secondary to-yellow-600">Engineering.</span>
           </h1>
           <p className="text-slate-300 text-lg md:text-xl max-w-2xl leading-relaxed text-center">
-            Next Step Electric was forged to modernize infrastructure. We don't just run wire; we design, calculate, and deploy highly resilient electrical systems for operations where failure is not an option.
+            Solution Scellant Toiture was forged to modernize infrastructure. We don't just run wire; we design, calculate, and deploy highly resilient electrical systems for operations where failure is not an option.
           </p>
         </div>
       </section>
@@ -35,7 +35,7 @@ export function AboutPage() {
               <div className="absolute inset-0 border-2 border-secondary/20 rounded-xl transform rotate-3 scale-105 transition-transform hover:rotate-6"></div>
               <img 
                 src="/branded-service-van.png" 
-                alt="Next Step Electric branded service van fleet" 
+                alt="Solution Scellant Toiture branded service van fleet" 
                 className="rounded-xl w-full h-full object-cover grayscale mix-blend-luminosity border border-white/10"
                 loading="lazy"
               />

@@ -10,14 +10,14 @@ const REVIEWS = [
     name: "Jackson Yeung",
     stars: 5,
     date: "March 2026",
-    text: "We had Dan of Next Step Electric install a 48A EV charger this week. He was quick to return our initial call, and super detailed over the phone. Booking was fast for our first visit/quote. He was punctual and completed the work exactly as described and quick! Neat and tidy. Thanks for the quick turnaround on our charger!",
+    text: "We had Dan of Solution Scellant Toiture install a 48A EV charger this week. He was quick to return our initial call, and super detailed over the phone. Booking was fast for our first visit/quote. He was punctual and completed the work exactly as described and quick! Neat and tidy. Thanks for the quick turnaround on our charger!",
     initials: "JY"
   },
   {
     name: "Vicky S",
     stars: 5,
     date: "March 2026",
-    text: "I am very impressed by Next Step Electric's work. Dan replied to my initial quote inquiry fast, and scheduled for the diagnostic/repair of some light fixtures very soon after. He was professional, informative, and got the job done quickly. Highly recommend!",
+    text: "I am very impressed by Solution Scellant Toiture's work. Dan replied to my initial quote inquiry fast, and scheduled for the diagnostic/repair of some light fixtures very soon after. He was professional, informative, and got the job done quickly. Highly recommend!",
     initials: "VS"
   },
   {
@@ -38,7 +38,7 @@ const REVIEWS = [
     name: "E. G.",
     stars: 5,
     date: "December 2025",
-    text: "I highly recommend Dan and Next Step Electric. He installed a hardwired level 2 EV charger in our garage. Dan provided a competitive quote and showed up right on time. He was professional, courteous and finished the job according to the plan. He left the garage spotless. Will definitely hire Next Step Electric for any future projects.",
+    text: "I highly recommend Dan and Solution Scellant Toiture. He installed a hardwired level 2 EV charger in our garage. Dan provided a competitive quote and showed up right on time. He was professional, courteous and finished the job according to the plan. He left the garage spotless. Will definitely hire Solution Scellant Toiture for any future projects.",
     initials: "EG"
   },
   {
@@ -73,21 +73,21 @@ const REVIEWS = [
     name: "G No",
     stars: 5,
     date: "March 2026",
-    text: "Next Step Electric replaced a faulty breaker in our panel. Dan was professional, efficient, and clearly explained what the issue was. He arrived on time and the pricing was very fair. Highly recommend!",
+    text: "Solution Scellant Toiture replaced a faulty breaker in our panel. Dan was professional, efficient, and clearly explained what the issue was. He arrived on time and the pricing was very fair. Highly recommend!",
     initials: "GN"
   },
   {
     name: "Sarah L",
     stars: 5,
     date: "November 2025",
-    text: "Dan did a great job installing our new light fixtures. He was punctual, professional, and very detail-oriented. The fixtures look great and he left the area clean. I would highly recommend Next Step Electric!",
+    text: "Dan did a great job installing our new light fixtures. He was punctual, professional, and very detail-oriented. The fixtures look great and he left the area clean. I would highly recommend Solution Scellant Toiture!",
     initials: "SL"
   },
   {
     name: "Mark Thompson",
     stars: 5,
     date: "October 2025",
-    text: "I had Next Step Electric install a subpanel in my garage. Dan was very professional and did a great job. He explained everything clearly and the final result was very neat and tidy. I'm very happy with the work and would recommend him to anyone!",
+    text: "I had Solution Scellant Toiture install a subpanel in my garage. Dan was very professional and did a great job. He explained everything clearly and the final result was very neat and tidy. I'm very happy with the work and would recommend him to anyone!",
     initials: "MT"
   },
   {

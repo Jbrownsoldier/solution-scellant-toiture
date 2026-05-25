@@ -28,10 +28,10 @@ const STEPS = [
 ];
 
 const SERVICES = [
-  { id: 'residential', label: 'Residential', icon: Home, color: 'from-blue-500 to-amber-500' },
-  { id: 'commercial', label: 'Commercial', icon: Building2, color: 'from-amber-600 to-amber-400' },
-  { id: 'ev-charger', label: 'EV Charging', icon: Battery, color: 'from-green-500 to-amber-500' },
-  { id: 'troubleshooting', label: 'Technical Support', icon: Search, color: 'from-red-500 to-amber-500' }
+  { id: 'gonano', label: 'GoNano Treatment', icon: Home, color: 'from-teal-500 to-teal-300' },
+  { id: 'inspection', label: 'Roof Inspection', icon: Search, color: 'from-teal-600 to-teal-400' },
+  { id: 'maintenance', label: 'Maintenance', icon: Building2, color: 'from-green-500 to-teal-500' },
+  { id: 'emergency', label: 'Emergency Repair', icon: Battery, color: 'from-red-500 to-teal-500' }
 ];
 
 export const QuoteModal = () => {
@@ -147,7 +147,7 @@ export const QuoteModal = () => {
                   {STEPS[currentStep].title}
                 </h2>
                 <p className="text-[10px] text-slate-500 font-mono uppercase">
-                  Next Step OS v4.2 // Encryption Active
+                  Solution Scellant OS v1.0 // Secure
                 </p>
               </div>
             </div>
@@ -349,9 +349,9 @@ export const QuoteModal = () => {
                       <CheckCircle2 className="w-12 h-12 text-slate-950" />
                     </div>
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-2 font-mono uppercase tracking-tighter">Transmission Successful</h3>
+                  <h3 className="text-3xl font-bold text-white mb-2 font-mono uppercase tracking-tighter">Request Received</h3>
                   <p className="text-slate-400 mb-8 max-w-sm font-mono text-sm leading-relaxed">
-                    YOUR PROJECT DATA HAS BEEN SYNCHRONIZED WITH OUR NETWORK. OUR TEAM HAS BEEN NOTIFIED AND WILL CONTACT YOU SHORTLY TO FINALIZE THE MISSION PARAMETERS.
+                    YOUR ROOF ASSESSMENT REQUEST HAS BEEN RECEIVED. OUR TEAM WILL CONTACT YOU SHORTLY TO SCHEDULE YOUR FREE GONANO INSPECTION.
                   </p>
                   <button 
                     onClick={closeQuoteModal}

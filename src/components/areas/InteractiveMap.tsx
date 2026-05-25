@@ -89,7 +89,7 @@ export function InteractiveMap() {
               opacity: 1, 
               scale: 1,
               strokeWidth: hoveredRegion === region.id ? 2 : 1,
-              stroke: hoveredRegion === region.id ? '#E8860A' : 'rgba(255,255,255,0.1)'
+              stroke: hoveredRegion === region.id ? '#1A9E8F' : 'rgba(255,255,255,0.1)'
             }}
           />
         ))}

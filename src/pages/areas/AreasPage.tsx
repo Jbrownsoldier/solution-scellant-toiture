@@ -21,7 +21,7 @@ export function AreasPage() {
             Service <span className="text-secondary">Areas</span>
           </h1>
           <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Next Step Electric maintains rapid-response infrastructure across the Greater Peel & Halton regions, engineered for high-availability.
+            Solution Scellant Toiture maintains rapid-response infrastructure across the Greater Peel & Halton regions, engineered for high-availability.
           </p>
         </div>
       </section>
