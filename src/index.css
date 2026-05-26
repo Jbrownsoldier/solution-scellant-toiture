@@ -156,7 +156,7 @@
 
   /* ── Nav link expanding underline ──────────────────────────────── */
   .nav-link {
-    @apply relative font-headline font-bold tracking-wide uppercase text-sm text-slate-600;
+    @apply relative font-headline font-bold tracking-wide uppercase text-sm;
     transition: color 0.2s ease;
   }
   .nav-link::after {
@@ -164,10 +164,6 @@
     @apply absolute left-1/2 bottom-0 h-px bg-secondary;
     width: 0;
     transition: width 0.25s ease, left 0.25s ease;
-  }
-  .nav-link:hover,
-  .nav-link.active {
-    @apply text-primary;
   }
   .nav-link:hover::after,
   .nav-link.active::after {

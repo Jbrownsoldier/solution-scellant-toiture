@@ -48,7 +48,11 @@ export function Navigation() {
   }, [isMobileMenuOpen]);
 
   const LanguageToggle = () => (
-    <div className="flex items-center bg-slate-100 border border-slate-200/60 rounded-full p-0.5 backdrop-blur-sm relative overflow-hidden transition-all duration-300">
+    <div className={`flex items-center rounded-full p-0.5 backdrop-blur-sm relative overflow-hidden transition-all duration-500 ${
+      isScrolled 
+        ? 'bg-slate-100 border border-slate-200/60' 
+        : 'bg-white/10 border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]'
+    }`}>
       <button
         onClick={() => setLanguage('fr')}
         aria-label="Changer la langue en français"
@@ -56,7 +60,9 @@ export function Navigation() {
         className={`px-2.5 py-1 text-[10px] font-headline font-bold uppercase tracking-wider rounded-full transition-all duration-300 relative z-10 ${
           language === 'fr' 
             ? 'text-white bg-secondary shadow-[0_2px_8px_rgba(0,102,204,0.25)]' 
-            : 'text-slate-500 hover:text-slate-800'
+            : isScrolled
+              ? 'text-slate-500 hover:text-slate-800'
+              : 'text-white/60 hover:text-white'
         }`}
       >
         FR
@@ -68,7 +74,9 @@ export function Navigation() {
         className={`px-2.5 py-1 text-[10px] font-headline font-bold uppercase tracking-wider rounded-full transition-all duration-300 relative z-10 ${
           language === 'en' 
             ? 'text-white bg-secondary shadow-[0_2px_8px_rgba(0,102,204,0.25)]' 
-            : 'text-slate-500 hover:text-slate-800'
+            : isScrolled
+              ? 'text-slate-500 hover:text-slate-800'
+              : 'text-white/60 hover:text-white'
         }`}
       >
         EN
@@ -110,16 +118,25 @@ export function Navigation() {
           </Link>
 
           <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={handleNavClick}
-                className={`nav-link px-2 py-1 ${location.pathname === link.path ? 'active' : ''}`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={handleNavClick}
+                  className={`nav-link px-2 py-1 transition-colors duration-300 ${
+                    isActive 
+                      ? 'active text-secondary' 
+                      : isScrolled
+                        ? 'text-[#1F2421] hover:text-secondary'
+                        : 'text-white/80 hover:text-white'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -127,7 +144,11 @@ export function Navigation() {
             <div className="hidden lg:flex items-center space-x-4">
               <a 
                 href="tel:+14383926208"
-                className="px-6 py-2 border border-secondary/30 text-secondary font-headline font-bold uppercase text-xs tracking-widest rounded hover:bg-secondary hover:text-white transition-colors"
+                className={`px-6 py-2 border font-headline font-bold uppercase text-xs tracking-widest rounded transition-all duration-300 ${
+                  isScrolled
+                    ? 'border-secondary/30 text-secondary hover:bg-secondary hover:text-white'
+                    : 'border-white/30 text-white hover:bg-white hover:text-primary'
+                }`}
               >
                 (438) 392-6208
               </a>
@@ -191,7 +212,7 @@ export function Navigation() {
             </div>
             <a 
               href="tel:+14383926208"
-              className="w-full py-4 border border-secondary/30 text-secondary font-headline font-bold uppercase text-sm tracking-widest rounded flex justify-center items-center"
+              className="w-full py-4 border border-white/20 text-white font-headline font-bold uppercase text-sm tracking-widest rounded flex justify-center items-center hover:bg-white hover:text-primary transition-all duration-300"
             >
               (438) 392-6208
             </a>
