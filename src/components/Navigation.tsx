@@ -97,14 +97,14 @@ export function Navigation() {
             {/* Soft background blue glow */}
             <div className="absolute -inset-1 bg-gradient-to-r from-secondary to-blue-500 rounded-xl blur-md opacity-20 group-hover/logo:opacity-35 transition-opacity duration-300 pointer-events-none"></div>
             {/* Premium glass-like rounded-xl container */}
-            <div className="relative px-3 py-1.5 bg-white/95 rounded-xl border border-slate-200/50 shadow-sm flex items-center justify-center">
+            <div className="relative px-4 py-2 bg-white/95 rounded-xl border border-slate-200/50 shadow-sm flex items-center justify-center">
               <img
                 src="/logo.jpg"
                 alt="Solution Scellant Toiture Logo"
-                className="h-9 md:h-11 w-auto object-contain"
+                className="h-16 md:h-20 w-auto object-contain"
                 loading="eager"
-                width="160"
-                height="38"
+                width="320"
+                height="76"
               />
             </div>
           </Link>
