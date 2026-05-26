@@ -64,43 +64,9 @@ export function HiggsfieldExtendedSections() {
     <div className="bg-[#FFFFFF] text-[#1F2421] font-sans">
       
       {/* ═══════════════════════════════════════════════════════════════════
-         1. DYNAMIC LOOPING VIDEO BANNER (6-Second Macro Closeup)
-         ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full h-[40vh] md:h-[60vh] min-h-[300px] md:min-h-[450px] overflow-hidden flex items-center justify-center">
-        {/* Background Video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover filter saturate-[0.95] brightness-[0.70]"
-          src="/roof-water-bead.mp4"
-          poster="/shingles-beading.png"
-          autoPlay
-          muted
-          playsInline
-          loop
-          preload="auto"
-        />
-        
-        {/* Dark Charcoal 20% overlay */}
-        <div className="absolute inset-0 bg-[#1F2421]/20 z-10" />
-
-        {/* Content Overlay */}
-        <div className="relative z-20 max-w-4xl mx-auto px-6 text-center text-white">
-          <span className="inline-block bg-secondary text-white font-headline text-xs font-bold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6">
-            {t('extended.banner_badge')}
-          </span>
-          <h2 className="font-display font-black text-3xl md:text-5xl lg:text-6xl uppercase tracking-tighter leading-[0.95] mb-6 text-white">
-            {t('extended.banner_title')}
-            <span className="text-secondary block md:inline">{t('extended.banner_title_highlight')}</span>
-          </h2>
-          <p className="text-white/90 text-md md:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
-            {t('extended.banner_desc')}
-          </p>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════════
          2. INTERACTIVE AVANT/APRÈS (Before/After Slider)
          ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24 px-6 md:px-8 max-w-7xl mx-auto">
+      <section className="py-32 px-6 md:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-secondary font-headline uppercase font-black tracking-widest text-xs mb-3 block">
             {t('extended.slider_badge')}
@@ -171,7 +137,7 @@ export function HiggsfieldExtendedSections() {
       {/* ═══════════════════════════════════════════════════════════════════
          3. VALUE PROPOSITIONS & STORYTELLING BARS
          ═══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F4F7F6] py-16 md:py-24 px-6 md:px-8">
+      <section className="bg-[#F4F7F6] py-32 px-6 md:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           
           {/* Benefit Anchors List */}
@@ -275,7 +241,7 @@ export function HiggsfieldExtendedSections() {
       {/* ═══════════════════════════════════════════════════════════════════
          4. THE SEALING PROTOCOL (Step-by-Step spraymist)
          ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24 px-6 md:px-8 max-w-7xl mx-auto">
+      <section className="py-32 px-6 md:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           
           {/* Circular Inset with Spraymist Image */}
@@ -339,7 +305,7 @@ export function HiggsfieldExtendedSections() {
       {/* ═══════════════════════════════════════════════════════════════════
          5. HIGH-CONVERTING CTA BLOCK (Fluid expand animation)
          ═══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-primary text-white py-20 px-6 md:px-8 relative overflow-hidden">
+      <section className="bg-primary text-white py-32 px-6 md:px-8 relative overflow-hidden">
         {/* Decorative Grid Pulse background */}
         <div className="absolute inset-0 grid-pulse pointer-events-none opacity-20" />
         
