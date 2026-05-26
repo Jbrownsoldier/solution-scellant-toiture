@@ -126,7 +126,7 @@ export function Hero() {
       <div className="relative z-10 w-full h-full flex flex-col items-center justify-center px-6 md:px-12 text-center">
 
         {/* ── Badge ────────────────────────────────────────────────────── */}
-        <span className="text-[#1A9E8F] font-headline font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-6 bg-[#1A9E8F]/10 px-4 py-1.5 rounded-full border border-[#1A9E8F]/20 inline-block">
+        <span className="text-secondary font-headline font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-6 bg-secondary/10 px-4 py-1.5 rounded-full border border-secondary/20 inline-block">
           {t('hero.badge')}
         </span>
 
@@ -134,8 +134,8 @@ export function Hero() {
         <div ref={headlineRef} className="will-change-transform will-change-opacity">
           <h1 className="hero-headline">
             {t('hero.headline_1')}{' '}
-            <span className="text-[#1A9E8F]">{t('hero.headline_highlight').split(' ')[0]}</span>{' '}
-            <span className="text-[#1A9E8F]">{t('hero.headline_highlight').split(' ').slice(1).join(' ')}</span>
+            <span className="text-secondary">{t('hero.headline_highlight').split(' ')[0]}</span>{' '}
+            <span className="text-secondary">{t('hero.headline_highlight').split(' ').slice(1).join(' ')}</span>
           </h1>
         </div>
 
@@ -166,7 +166,7 @@ export function Hero() {
         {/* ── Sub-text (fades IN once headline fades out) ───────────────── */}
         <div
           ref={subTextRef}
-          className="max-w-3xl mt-0 will-change-opacity"
+          className="max-w-3xl mt-0 will-change-opacity hidden md:block"
         >
           <p className="hero-sub-text">
             {t('hero.subtext')}
