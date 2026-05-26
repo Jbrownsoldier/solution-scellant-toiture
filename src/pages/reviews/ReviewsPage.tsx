@@ -129,7 +129,9 @@ export function ReviewsPage() {
                 <div className="flex gap-1 my-2">
                   {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 fill-secondary text-secondary" />)}
                 </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Google Rating</div>
+                <div className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">
+                  {language === 'fr' ? 'Note Google' : 'Google Rating'}
+                </div>
              </div>
              <div className="w-px h-16 bg-white/10 hidden sm:block"></div>
              <div className="flex flex-col items-center">
@@ -176,7 +178,9 @@ export function ReviewsPage() {
                                 <div className="flex items-center gap-2">
                                   <span className="text-xs text-slate-500 font-mono italic">{review.date}</span>
                                   <span className="w-1 h-1 bg-slate-700 rounded-full"></span>
-                                  <span className="text-[10px] text-secondary font-headline uppercase font-bold tracking-widest">Verified</span>
+                                  <span className="text-[10px] text-secondary font-headline uppercase font-bold tracking-widest">
+                                    {language === 'fr' ? 'Vérifié' : 'Verified'}
+                                  </span>
                                 </div>
                             </div>
                         </div>
