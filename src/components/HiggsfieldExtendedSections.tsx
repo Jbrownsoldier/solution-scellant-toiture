@@ -91,7 +91,7 @@ export function HiggsfieldExtendedSections() {
           {/* After Image (Background) */}
           <div className="absolute inset-0 w-full h-full bg-[#F4F7F6]">
             <img 
-              src="/roof-after-v2.png" 
+              src="/roof-after-v3.webp" 
               alt="Roof after treatment" 
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               loading="lazy"
@@ -108,7 +108,7 @@ export function HiggsfieldExtendedSections() {
           >
             <div className="absolute inset-0 w-full h-full" style={{ width: containerRef.current?.getBoundingClientRect().width || '100vw' }}>
               <img 
-                src="/roof-before-v2.png" 
+                src="/roof-before-v3.webp" 
                 alt="Roof before treatment" 
                 className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                 loading="lazy"
