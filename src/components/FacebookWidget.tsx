@@ -38,8 +38,9 @@ export function FacebookWidget() {
   return (
     <div
       className={`
+        hidden md:block
         fixed left-6 z-40
-        bottom-20 md:bottom-8
+        bottom-8
         transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
         ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-90 pointer-events-none'}
       `}
