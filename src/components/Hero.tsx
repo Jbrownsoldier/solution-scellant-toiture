@@ -107,7 +107,7 @@ export function Hero() {
       {isMobile ? (
         <img
           className="hero-video-bg object-cover w-full h-full bg-[#0E1B2A] bg-[radial-gradient(ellipse_at_center,rgba(26,158,143,0.15),transparent)]"
-          src="/hero-poster.png"
+          src="/roof-after.png"
           alt="Roof sealing background"
           fetchpriority="high"
         />
@@ -115,7 +115,7 @@ export function Hero() {
         <video
           className="hero-video-bg bg-[#0E1B2A] bg-[radial-gradient(ellipse_at_center,rgba(26,158,143,0.15),transparent)]"
           src="/hero-roof-sealing.mp4"
-          poster="/hero-poster.png"
+          poster="/roof-after.png"
           autoPlay
           muted
           playsInline
