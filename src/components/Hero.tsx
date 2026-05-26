@@ -107,7 +107,7 @@ export function Hero() {
       <video
         className="hero-video-bg bg-[#0E1B2A] bg-[radial-gradient(ellipse_at_center,rgba(26,158,143,0.15),transparent)]"
         src="/hero-roof-sealing.mp4"
-        poster="/roof-after.png"
+        poster="/roof-after-v2.png"
         autoPlay
         muted
         playsInline
