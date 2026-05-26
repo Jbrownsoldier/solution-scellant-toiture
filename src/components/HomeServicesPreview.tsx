@@ -27,24 +27,24 @@ export function HomeServicesPreview() {
             <ScrollRevealItem>
               <div className="service-card group h-full">
                   <ShieldCheck className="card-icon mb-6 w-10 h-10" />
-                  <h3 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-4">{t('services_preview.gonano_title')}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{t('services_preview.gonano_desc')}</p>
+                  <h3 className="text-xl font-headline font-bold text-primary uppercase tracking-tight mb-4">{t('services_preview.gonano_title')}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{t('services_preview.gonano_desc')}</p>
               </div>
             </ScrollRevealItem>
             
             <ScrollRevealItem>
               <div className="service-card group h-full">
                   <Search className="card-icon mb-6 w-10 h-10" />
-                  <h3 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-4">{t('services_preview.inspection_title')}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{t('services_preview.inspection_desc')}</p>
+                  <h3 className="text-xl font-headline font-bold text-primary uppercase tracking-tight mb-4">{t('services_preview.inspection_title')}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{t('services_preview.inspection_desc')}</p>
               </div>
             </ScrollRevealItem>
 
             <ScrollRevealItem>
               <div className="service-card group h-full">
                   <Wrench className="card-icon mb-6 w-10 h-10" />
-                  <h3 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-4">{t('services_preview.maintenance_title')}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{t('services_preview.maintenance_desc')}</p>
+                  <h3 className="text-xl font-headline font-bold text-primary uppercase tracking-tight mb-4">{t('services_preview.maintenance_title')}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{t('services_preview.maintenance_desc')}</p>
               </div>
             </ScrollRevealItem>
         </ScrollReveal>

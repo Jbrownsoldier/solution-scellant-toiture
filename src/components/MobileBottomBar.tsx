@@ -11,19 +11,19 @@ export function MobileBottomBar() {
       className="
         md:hidden
         fixed bottom-0 inset-x-0 z-40
-        bg-[#09101A]/95 backdrop-blur-xl
-        border-t border-white/10
+        bg-white/95 backdrop-blur-xl
+        border-t border-slate-200
         px-4 pt-3
         pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))]
-        shadow-[0_-10px_40px_rgba(0,0,0,0.5)]
+        shadow-[0_-8px_30px_rgba(10,37,64,0.05)]
       "
     >
       <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto">
         <a
-          href="tel:+15146136904"
+          href="tel:+14383926208"
           className="
             flex items-center justify-center gap-2
-            bg-transparent hover:bg-white/5 active:bg-white/10
+            bg-slate-50 hover:bg-slate-100 active:bg-slate-200
             border border-secondary/30
             text-secondary font-headline font-bold uppercase tracking-widest text-xs
             rounded-md py-3.5
@@ -38,9 +38,9 @@ export function MobileBottomBar() {
           className="
             flex items-center justify-center gap-2
             bg-secondary hover:brightness-110 active:scale-95
-            text-primary font-headline font-bold uppercase tracking-widest text-xs
+            text-white font-headline font-bold uppercase tracking-widest text-xs
             rounded-md py-3.5
-            shadow-[0_0_15px_rgba(26,158,143,0.2)]
+            shadow-[0_4px_16px_rgba(0,102,204,0.2)]
             transition-all duration-200
           "
           aria-label="Get a free quote"

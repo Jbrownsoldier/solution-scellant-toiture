@@ -154,12 +154,12 @@ export function Hero() {
           </button>
 
           <a
-            href="tel:+15146136904"
+            href="tel:+14383926208"
             className="hero-cta-secondary"
             aria-label="Call Solution Scellant Toiture"
           >
             <Phone className="w-4 h-4 flex-shrink-0" />
-            <span>(514) 613-6904</span>
+            <span>(438) 392-6208</span>
           </a>
         </div>
 

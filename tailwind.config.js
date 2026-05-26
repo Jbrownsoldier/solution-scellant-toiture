@@ -5,36 +5,36 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#2D3E50',       // dark charcoal from Solution Scellant Toiture logo
-          container: '#3A4F63',
+          DEFAULT: '#0A2540',       // Rich Navy Blue from Solution Scellant Toiture prestige identity
+          container: '#153A60',
         },
         secondary: {
-          DEFAULT: '#1A9E8F',       // teal from Solution Scellant Toiture logo
-          fixed: '#7DD4C9',
-          container: '#1A9E8F',
+          DEFAULT: '#0066CC',       // Vibrant Blue representing water-repellency and sealing
+          fixed: '#3B82F6',
+          container: '#0066CC',
         },
-        'on-secondary-container': '#2D3E50',
+        'on-secondary-container': '#FFFFFF',
         tertiary: {
-          DEFAULT: '#14796E',
+          DEFAULT: '#0052CC',       // Slightly darker blue for hover states
         },
         surface: {
-          DEFAULT: '#0E1B2A',       // deep dark for backgrounds
+          DEFAULT: '#FFFFFF',       // Pristine pure white background for modern premium feel
           container: {
-            lowest: '#091420',
-            low: '#0F1F30',
-            DEFAULT: '#142B3F',
-            highest: '#1C3650',
+            lowest: '#FFFFFF',
+            low: '#F8FAFC',
+            DEFAULT: '#F1F5F9',
+            highest: '#E2E8F0',
           }
         },
         outline: {
-          variant: '#2A4560',
+          variant: '#CBD5E1',
         },
-        // High-contrast text scale
+        // High-contrast legible text scale
         prose: {
-          high:   '#F1F5F9',
-          mid:    '#94A3B8',
-          low:    '#475569',
-          accent: '#1A9E8F',        // teal for highlights
+          high:   '#0F172A',        // Dark slate for high legibility
+          mid:    '#475569',
+          low:    '#64748B',
+          accent: '#0066CC',        // Vibrant Blue for highlights
         }
       },
       fontFamily: {
@@ -55,12 +55,12 @@ export default {
         'relaxed-body': '1.75',
       },
       boxShadow: {
-        ambient:  '0 4px 32px rgba(45, 62, 80, 0.08)',
-        'glow-sm': '0 0 16px rgba(26,158,143,0.18)',
-        'glow-md': '0 0 32px rgba(26,158,143,0.24)',
-        'glow-lg': '0 0 64px rgba(26,158,143,0.30)',
-        'glass':   '0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08)',
-        'glass-lg':'0 24px 64px rgba(0,0,0,0.50), inset 0 1px 0 rgba(255,255,255,0.08)',
+        ambient:  '0 4px 32px rgba(10, 37, 64, 0.05)',
+        'glow-sm': '0 0 16px rgba(0, 102, 204, 0.12)',
+        'glow-md': '0 0 32px rgba(0, 102, 204, 0.18)',
+        'glow-lg': '0 0 64px rgba(0, 102, 204, 0.24)',
+        'glass':   '0 8px 32px rgba(10, 37, 64, 0.15), inset 0 1px 0 rgba(255,255,255,0.6)',
+        'glass-lg':'0 24px 64px rgba(10, 37, 64, 0.22), inset 0 1px 0 rgba(255,255,255,0.6)',
       },
       backdropBlur: {
         xs: '2px',

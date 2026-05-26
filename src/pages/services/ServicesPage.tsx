@@ -66,18 +66,18 @@ export function ServicesPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-            <div className="bg-surface/80 border border-white/5 p-8 rounded-xl hover:bg-surface hover:border-secondary/30 transition-colors group">
-              <Search className="text-slate-500 group-hover:text-secondary mb-6 w-10 h-10 transition-colors" />
+            <div className="bg-white/[0.03] border border-white/10 p-8 rounded-xl hover:bg-white/[0.06] hover:border-secondary/30 transition-colors group">
+              <Search className="text-slate-400 group-hover:text-secondary mb-6 w-10 h-10 transition-colors" />
               <h3 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-4">{t('services_preview.inspection_title')}</h3>
-              <p className="text-sm text-slate-400 leading-relaxed mb-6">{t('services_preview.inspection_desc')}</p>
+              <p className="text-sm text-slate-300 leading-relaxed mb-6">{t('services_preview.inspection_desc')}</p>
               <a href="/inspection" className="text-secondary inline-flex items-center gap-2 hover:underline text-xs font-bold font-headline uppercase tracking-wider">
                 En savoir plus <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-            <div className="bg-surface/80 border border-white/5 p-8 rounded-xl hover:bg-surface hover:border-secondary/30 transition-colors group">
-              <Wrench className="text-slate-500 group-hover:text-secondary mb-6 w-10 h-10 transition-colors" />
+            <div className="bg-white/[0.03] border border-white/10 p-8 rounded-xl hover:bg-white/[0.06] hover:border-secondary/30 transition-colors group">
+              <Wrench className="text-slate-400 group-hover:text-secondary mb-6 w-10 h-10 transition-colors" />
               <h3 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-4">{t('services_preview.maintenance_title')}</h3>
-              <p className="text-sm text-slate-400 leading-relaxed mb-6">{t('services_preview.maintenance_desc')}</p>
+              <p className="text-sm text-slate-300 leading-relaxed mb-6">{t('services_preview.maintenance_desc')}</p>
               <button onClick={openQuoteModal} className="text-secondary inline-flex items-center gap-2 hover:underline text-xs font-bold font-headline uppercase tracking-wider">
                 {t('hero.cta_primary')} <ArrowRight className="w-4 h-4" />
               </button>
@@ -90,12 +90,12 @@ export function ServicesPage() {
       <SavingsCalculator />
 
       {/* CTA */}
-      <section className="py-20 bg-surface border-t border-white/5 text-center">
+      <section className="py-20 bg-surface border-t border-slate-200 text-center">
         <div className="max-w-3xl mx-auto px-8">
-          <h2 className="font-headline text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-6">
+          <h2 className="font-headline text-3xl md:text-5xl font-black text-primary uppercase tracking-tighter mb-6">
             {t('contact_cta.title_1')} <span className="text-secondary">{t('contact_cta.title_highlight')}</span>
           </h2>
-          <p className="text-slate-400 text-lg mb-10">{t('contact_cta.desc')}</p>
+          <p className="text-slate-600 text-lg mb-10">{t('contact_cta.desc')}</p>
           <button onClick={openQuoteModal} className="hero-cta-primary btn-magnetic">
             <span>{t('hero.cta_primary')}</span>
             <ArrowRight className="w-5 h-5" />

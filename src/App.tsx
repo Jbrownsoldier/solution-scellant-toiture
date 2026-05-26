@@ -35,7 +35,7 @@ export default function App() {
                 "image": "https://solutionscellanttoiture.com/logo.jpg",
                 "@id": "https://solutionscellanttoiture.com/#organization",
                 "url": "https://solutionscellanttoiture.com",
-                "telephone": "+1-514-613-6904",
+                                "telephone": "+1-438-392-6208",
                 "priceRange": "$$",
                 "address": {
                   "@type": "PostalAddress",
@@ -74,10 +74,6 @@ export default function App() {
                   },
                   {
                     "@type": "AdministrativeArea",
-                    "name": "Laval"
-                  },
-                  {
-                    "@type": "AdministrativeArea",
                     "name": "Rive-Sud"
                   },
                   {
@@ -92,8 +88,8 @@ export default function App() {
             <CursorGlow />
             <Navigation />
             <Suspense fallback={
-              <div style={{ minHeight: '100svh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0E1B2A' }}>
-                <div style={{ width: 36, height: 36, border: '3px solid #1A9E8F', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 0.7s linear infinite' }} />
+              <div style={{ minHeight: '100svh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#FFFFFF' }}>
+                <div style={{ width: 36, height: 36, border: '3px solid #0066CC', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 0.7s linear infinite' }} />
               </div>
             }>
               <Routes>

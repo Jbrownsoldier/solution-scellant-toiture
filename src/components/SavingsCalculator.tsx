@@ -27,7 +27,7 @@ export function SavingsCalculator() {
   const lifeExtensionYears = roofAge <= 15 ? '10 - 15' : '5 - 10';
 
   return (
-    <section className="py-24 bg-surface border-t border-white/5 relative overflow-hidden">
+    <section className="py-24 bg-primary border-t border-white/5 relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-[#0E1B2A]/30 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[300px] bg-secondary/5 rounded-full blur-[120px] pointer-events-none" />

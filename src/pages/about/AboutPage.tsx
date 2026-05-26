@@ -16,7 +16,7 @@ export function AboutPage() {
           <Hexagon className="w-16 h-16 text-secondary mb-8 animate-[spin_10s_linear_infinite] opacity-80" />
           <h1 className="font-headline text-5xl md:text-7xl font-black text-white leading-none tracking-tighter mb-8 uppercase text-center">
             {t('about_page.title').split(' ')[0]} <br/>
-            <span className="text-secondary bg-clip-text text-transparent bg-gradient-to-r from-secondary to-yellow-600">
+            <span className="text-secondary bg-clip-text text-transparent bg-gradient-to-r from-secondary to-blue-400">
               {t('about_page.title').split(' ').slice(1).join(' ')}
             </span>
           </h1>
@@ -32,7 +32,7 @@ export function AboutPage() {
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
             <div className="relative w-full aspect-square max-w-[500px]">
               <div className="absolute inset-0 border-2 border-secondary/20 rounded-xl transform rotate-3 scale-105 transition-transform hover:rotate-6"></div>
-              <div className="w-full h-full rounded-xl bg-slate-900 border border-white/10 flex items-center justify-center p-8">
+              <div className="w-full h-full rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center p-8">
                 <Hexagon className="w-32 h-32 text-secondary opacity-20" />
               </div>
               <div className="absolute bottom-4 left-4 bg-primary border text-white text-xs border-secondary/30 p-2 font-mono rounded">
@@ -41,24 +41,24 @@ export function AboutPage() {
             </div>
           </div>
           <div className="order-1 lg:order-2">
-            <h2 className="font-headline text-3xl font-black text-white mb-6 uppercase tracking-tight">{t('about_page.subtitle')}</h2>
-            <p className="text-slate-400 mb-6 leading-relaxed">
+            <h2 className="font-headline text-3xl font-black text-primary mb-6 uppercase tracking-tight">{t('about_page.subtitle')}</h2>
+            <p className="text-slate-600 mb-6 leading-relaxed">
               {t('about_page.desc2')}
             </p>
-            <p className="text-slate-400 mb-8 leading-relaxed">
+            <p className="text-slate-600 mb-8 leading-relaxed">
               {t('hero.subtext')}
             </p>
             
             <ul className="space-y-4 font-headline uppercase tracking-widest text-sm font-bold">
-              <li className="flex items-center gap-3 text-white">
+              <li className="flex items-center gap-3 text-primary">
                 <CheckCircle2 className="w-5 h-5 text-secondary" />
                 {t('trust.guarantee')}
               </li>
-              <li className="flex items-center gap-3 text-white">
+              <li className="flex items-center gap-3 text-primary">
                 <CheckCircle2 className="w-5 h-5 text-secondary" />
                 {t('trust.time')}
               </li>
-              <li className="flex items-center gap-3 text-white">
+              <li className="flex items-center gap-3 text-primary">
                 <CheckCircle2 className="w-5 h-5 text-secondary" />
                 {t('trust.waste')}
               </li>
@@ -81,36 +81,36 @@ export function AboutPage() {
                   "{t('footer.slogan')}"
                 </p>
                 <div className="flex items-center gap-6">
-                    <div className="bg-surface/50 border border-white/10 rounded-lg p-4 flex-1">
+                    <div className="bg-white/[0.04] border border-white/10 rounded-lg p-4 flex-1">
                         <Award className="w-6 h-6 text-secondary mb-2" />
                         <div className="font-headline font-bold text-white uppercase text-xs mb-1">{t('trust.rbq')}</div>
-                        <div className="text-slate-500 text-xs">{t('trust.rbq_sub')}</div>
+                        <div className="text-slate-400 text-xs">{t('trust.rbq_sub')}</div>
                     </div>
                 </div>
             </div>
 
             <div className="w-full lg:w-[400px] shrink-0">
-                <div className="bg-surface border border-secondary/30 p-8 rounded-xl shadow-[0_0_30px_rgba(26,158,143,0.05)] relative">
+                <div className="bg-surface border border-slate-200/80 p-8 rounded-xl shadow-xl relative">
                     <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-secondary/50 rounded-tr-xl"></div>
                     <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-secondary/50 rounded-bl-xl"></div>
 
-                    <h3 className="font-headline font-bold text-white text-xl mb-4 uppercase tracking-widest border-b border-white/10 pb-4">Fiche technique / Stats</h3>
-                    <ul className="space-y-4 font-mono text-sm text-slate-400">
-                        <li className="flex justify-between items-center group">
+                    <h3 className="font-headline font-bold text-primary text-xl mb-4 uppercase tracking-widest border-b border-slate-100 pb-4">Fiche technique / Stats</h3>
+                    <ul className="space-y-4 font-mono text-sm text-slate-600">
+                        <li className="flex justify-between items-center group border-b border-slate-50 pb-2">
                             <span>Hydrophobie / Repels Water</span>
-                            <span className="text-secondary opacity-0 group-hover:opacity-100 transition-opacity">100%</span>
+                            <span className="text-secondary font-bold">100%</span>
                         </li>
-                        <li className="flex justify-between items-center group">
+                        <li className="flex justify-between items-center group border-b border-slate-50 pb-2">
                             <span>Granule Retention</span>
-                            <span className="text-secondary opacity-0 group-hover:opacity-100 transition-opacity">100%</span>
+                            <span className="text-secondary font-bold">100%</span>
                         </li>
-                        <li className="flex justify-between items-center group">
+                        <li className="flex justify-between items-center group border-b border-slate-50 pb-2">
                             <span>UV Protection</span>
-                            <span className="text-secondary opacity-0 group-hover:opacity-100 transition-opacity">100%</span>
+                            <span className="text-secondary font-bold">100%</span>
                         </li>
                         <li className="flex justify-between items-center group">
                             <span>Eco-Friendly Rating</span>
-                            <span className="text-secondary opacity-0 group-hover:opacity-100 transition-opacity">100%</span>
+                            <span className="text-secondary font-bold">100%</span>
                         </li>
                     </ul>
                 </div>

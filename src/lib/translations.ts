@@ -12,13 +12,12 @@ export const translations: Record<string, any> = {
       badge: 'Spécialistes Certifiés du Toit · Grand Montréal',
       headline_1: 'Revitalisez Votre Toit avec un',
       headline_highlight: 'Scellant Protecteur.',
-      cta_primary: 'OBTENIR UNE ÉVALUATION GRATUITE',
-      cta_secondary: '(514) 613-6904',
+      cta_secondary: '(438) 392-6208',
       subtext: 'Économisez jusqu\'à 80 % par rapport à un remplacement complet de toiture. Notre scellant protecteur et revitalisant de bardeaux pénètre en profondeur pour restaurer la flexibilité de l\'asphalte et former un bouclier hydrophobe permanent — appliqué en moins de 60 minutes avec zéro déchet de construction. Garantie de 10 à 15 ans.',
     },
     trust: {
-      rbq: 'Licence RBQ',
-      rbq_sub: 'Certifié Québec',
+      rbq: 'Assurance Complète',
+      rbq_sub: 'Responsabilité 2M$',
       guarantee: 'Garantie de 10-15 Ans',
       guarantee_sub: 'Garantie Prolongée',
       time: 'Application < 60 Min',
@@ -84,7 +83,7 @@ export const translations: Record<string, any> = {
       read_all: 'Lire tous les avis',
       quote: '"On nous a proposé un devis de 18 000 $ pour un remplacement complet de toiture. Solution Scellant Toiture a appliqué leur traitement scellant en moins d\'une heure — notre toit a l\'air neuf et nous avons économisé plus de 14 000 $. L\'équipe était professionnelle, propre, et la garantie prolongée nous donne une tranquillité d\'esprit totale."',
       author: 'Marie Lefebvre',
-      location: 'Traitement de scellant protecteur · Laval',
+      location: 'Traitement de scellant protecteur · Rive-Nord',
     },
     faq: {
       title: 'Questions Fréquentes',
@@ -110,7 +109,7 @@ export const translations: Record<string, any> = {
       q9: 'Est-ce que cela modifie l\'apparence de mon toit ?',
       a9: 'Le traitement est transparent. Il ne changera pas la couleur de votre toit, mais lui redonnera un aspect légèrement plus riche, propre et neuf en resserrant les granules de surface.',
       q10: 'Comment obtenir mon évaluation gratuite ?',
-      a10: 'Vous pouvez utiliser notre formulaire de demande en ligne en cliquant sur le bouton « Évaluation Gratuite », ou nous appeler directement au (514) 613-6904 pour planifier une inspection sans frais.',
+      a10: 'Vous pouvez utiliser notre formulaire de demande en ligne en cliquant sur le bouton « Évaluation Gratuite », ou nous appeler directement au (438) 392-6208 pour planifier une inspection sans frais.',
     },
     contact_cta: {
       badge: 'Évaluation Gratuite',
@@ -132,7 +131,7 @@ export const translations: Record<string, any> = {
       phone: 'Téléphone',
       hours: 'Heures d\'ouverture',
       hours_val: 'Lun – Ven : 8h – 18h',
-      license: 'Licence RBQ',
+      license: 'Assurance Commerciale',
       rights: 'Tous droits réservés.',
       slogan: 'L\'alternative intelligente au remplacement de toiture.',
       links: 'Navigation',
@@ -163,7 +162,7 @@ export const translations: Record<string, any> = {
       q1_title: 'Quel est l\'âge approximatif de votre toiture ?',
       opt_age_1: 'Moins de 5 ans',
       opt_age_2: '5 à 10 ans',
-      opt_age_3: '10 to 15 ans',
+      opt_age_3: '10 à 15 ans',
       opt_age_4: 'Plus de 15 ans',
       
       q2_title: 'Quelle est la taille approximative de votre propriété ?',
@@ -232,7 +231,7 @@ export const translations: Record<string, any> = {
     reviews_page: {
       title: 'Avis de Nos Clients',
       subtitle: 'Témoignages',
-      desc: 'Découvrez ce que les propriétaires de Montréal, Laval et de la Rive-Sud pensent de nos traitements innovants de scellement de toiture.',
+      desc: 'Découvrez ce que les propriétaires de Montréal, de la Rive-Nord et de la Rive-Sud pensent de nos traitements innovants de scellement de toiture.',
     },
     contact_page: {
       title: 'Contactez-Nous',
@@ -303,12 +302,12 @@ export const translations: Record<string, any> = {
       headline_1: 'Revitalize Your Roof with a',
       headline_highlight: 'Protective Sealant.',
       cta_primary: 'GET A FREE EVALUATION',
-      cta_secondary: '(514) 613-6904',
+      cta_secondary: '(438) 392-6208',
       subtext: 'Save up to 80% vs. full roof replacement. Our premium shingle protective sealant penetrates deep to restore asphalt flexibility and form a permanent hydrophobic shield — applied in under 60 minutes with zero construction waste. 10 to 15-year guarantee.',
     },
     trust: {
-      rbq: 'RBQ Licensed',
-      rbq_sub: 'Québec Certified',
+      rbq: 'Fully Insured',
+      rbq_sub: '$2M Liability',
       guarantee: '10-15 Year Guarantee',
       guarantee_sub: 'Extended Warranty',
       time: '< 60 Min Application',
@@ -374,7 +373,7 @@ export const translations: Record<string, any> = {
       read_all: 'Read All Reviews',
       quote: '"We were quoted $18,000 for a full roof replacement. Solution Scellant Toiture applied their sealing treatment in under an hour — our roof looks brand new and we saved over $14,000. The team was professional, clean, and the extended warranty gives us total peace of mind."',
       author: 'Marie Lefebvre',
-      location: 'Protective Sealant Treatment · Laval',
+      location: 'Protective Sealant Treatment · North Shore',
     },
     faq: {
       title: 'Frequently Asked Questions',
@@ -399,7 +398,7 @@ export const translations: Record<string, any> = {
       q9: 'Does it change the appearance of my roof?',
       a9: 'The treatment is completely transparent. It will not change the color of your roof, but will restore a slightly richer, cleaner, and newer look by binding the surface granules.',
       q10: 'How do I get my free evaluation?',
-      a10: 'You can use our online form by clicking the "Free Evaluation" button, or call us directly at (514) 613-6904 to schedule your assessment at zero cost.',
+      a10: 'You can use our online form by clicking the "Free Evaluation" button, or call us directly at (438) 392-6208 to schedule your assessment at zero cost.',
     },
     contact_cta: {
       badge: 'Free Evaluation',
@@ -421,7 +420,7 @@ export const translations: Record<string, any> = {
       phone: 'Phone',
       hours: 'Business Hours',
       hours_val: 'Mon – Fri: 8 AM – 6 PM',
-      license: 'RBQ License',
+      license: 'Commercial Insurance',
       rights: 'All rights reserved.',
       slogan: 'The smart alternative to roof replacement.',
       links: 'Navigation',
@@ -521,7 +520,7 @@ export const translations: Record<string, any> = {
     reviews_page: {
       title: 'Customer Reviews',
       subtitle: 'Testimonials',
-      desc: 'Discover what homeowners in Montreal, Laval, and the South Shore think of our innovative protective roof sealing treatments.',
+      desc: 'Discover what homeowners in Montreal, the North Shore, and the South Shore think of our innovative protective roof sealing treatments.',
     },
     contact_page: {
       title: 'Contact Us',

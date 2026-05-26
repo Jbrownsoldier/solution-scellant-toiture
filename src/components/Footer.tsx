@@ -33,25 +33,28 @@ export function Footer() {
   }, [location.pathname, navigate]);
 
   return (
-    <footer className="bg-surface w-full rounded-t-none">
+    <footer className="bg-primary w-full rounded-t-none text-white">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 w-full max-w-7xl mx-auto">
         <div className="md:col-span-1">
           <Link to="/" aria-label="Solution Scellant Toiture Home">
-            <img
-              src="/logo.jpg"
-              alt="Solution Scellant Toiture Logo"
-              className="h-14 w-auto object-contain mb-4"
-              loading="lazy"
-              width="250"
-              height="60"
-            />
+            {/* White-grounded creative logo container in footer */}
+            <div className="inline-block px-3 py-1.5 bg-white rounded-xl mb-4">
+              <img
+                src="/logo.jpg"
+                alt="Solution Scellant Toiture Logo"
+                className="h-10 w-auto object-contain"
+                loading="lazy"
+                width="200"
+                height="48"
+              />
+            </div>
           </Link>
-          <p className="text-slate-400 text-sm leading-relaxed mb-6">{t('footer.tagline')}</p>
+          <p className="text-slate-300 text-sm leading-relaxed mb-6">{t('footer.tagline')}</p>
           <div className="flex space-x-4">
-            <a href="https://facebook.com/solutionscellanttoiture" className="text-slate-400 hover:text-secondary transition-colors" aria-label="Facebook">
+            <a href="https://facebook.com/solutionscellanttoiture" className="text-slate-300 hover:text-secondary transition-colors" aria-label="Facebook">
               <SocialIcon name="facebook" />
             </a>
-            <a href="https://www.instagram.com/p/DYx8aFqsPRu/" className="text-slate-400 hover:text-secondary transition-colors" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/p/DYx8aFqsPRu/" className="text-slate-300 hover:text-secondary transition-colors" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <SocialIcon name="instagram" />
             </a>
           </div>
@@ -62,7 +65,7 @@ export function Footer() {
           <ul className="space-y-4">
             {serviceLinks.map((link) => (
               <li key={link.label}>
-                <Link to={link.to} className="text-slate-400 hover:text-white transition-transform duration-200 inline-block hover:translate-x-1 text-sm">
+                <Link to={link.to} className="text-slate-300 hover:text-secondary transition-transform duration-200 inline-block hover:translate-x-1 text-sm">
                   {link.label}
                 </Link>
               </li>
@@ -75,7 +78,7 @@ export function Footer() {
           <ul className="space-y-4">
             {exploreLinks.map((link) => (
               <li key={link.label}>
-                <Link to={link.to} className="text-slate-400 hover:text-white transition-transform duration-200 inline-block hover:translate-x-1 text-sm">
+                <Link to={link.to} className="text-slate-300 hover:text-secondary transition-transform duration-200 inline-block hover:translate-x-1 text-sm">
                   {link.label}
                 </Link>
               </li>
@@ -85,17 +88,17 @@ export function Footer() {
 
         <div>
           <h4 className="text-white font-headline font-bold mb-6 text-xs uppercase tracking-widest">Contact</h4>
-          <p className="text-slate-400 text-sm mb-2"><strong>{t('footer.phone')}:</strong> (514) 613-6904</p>
-          <p className="text-slate-400 text-sm mb-6"><strong>{t('footer.hours')}:</strong> {t('footer.hours_val')}</p>
-          <p className="text-slate-500 text-xs">
+          <p className="text-slate-300 text-sm mb-2"><strong>{t('footer.phone')}:</strong> <a href="tel:+14383926208" className="hover:text-secondary transition-colors">(438) 392-6208</a></p>
+          <p className="text-slate-300 text-sm mb-6"><strong>{t('footer.hours')}:</strong> {t('footer.hours_val')}</p>
+          <p className="text-slate-400 text-xs font-semibold">
             {t('footer.license')} · Spécialiste certifié en protection de toiture
           </p>
         </div>
       </div>
 
-      <div className="px-8 py-8 bg-surface border-t border-white/5 text-center flex flex-col items-center">
-        <p className="text-slate-500 text-xs font-semibold uppercase tracking-widest mb-2">© {year} Solution Scellant Toiture. {t('footer.rights')}</p>
-        <p className="text-slate-500 text-xs">Grand Montréal, Québec, Canada</p>
+      <div className="px-8 py-8 bg-[#071D33] border-t border-white/10 text-center flex flex-col items-center">
+        <p className="text-slate-400 text-xs font-semibold uppercase tracking-widest mb-2">© {year} Solution Scellant Toiture. {t('footer.rights')}</p>
+        <p className="text-slate-450 text-xs">Grand Montréal, Québec, Canada</p>
       </div>
     </footer>
   );

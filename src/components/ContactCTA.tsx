@@ -32,7 +32,7 @@ export function ContactCTA() {
               </div>
               <div>
                 <span className="text-secondary font-headline font-bold text-[10px] uppercase tracking-[0.2em] block mb-1">{t('contact_cta.phone_label')}</span>
-                <p className="text-white text-xl font-bold font-headline">(514) 613-6904</p>
+                <a href="tel:+14383926208" className="text-white text-xl font-bold font-headline hover:text-secondary transition-colors duration-200 block">(438) 392-6208</a>
               </div>
             </div>
 

@@ -112,7 +112,7 @@ export function ReviewsPage() {
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-slate-500/10 rounded-full blur-[80px]"></div>
         </div>
         <div className="max-w-4xl mx-auto relative z-10">
-          <span className="inline-flex items-center gap-2 px-3 py-1 bg-surface border border-white/5 text-slate-400 rounded-full text-xs font-headline font-bold tracking-[0.2em] uppercase mb-6">
+          <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 text-slate-300 rounded-full text-xs font-headline font-bold tracking-[0.2em] uppercase mb-6">
             <Zap className="w-3 h-3 animate-pulse text-secondary" />
             {t('reviews.proven')}
           </span>

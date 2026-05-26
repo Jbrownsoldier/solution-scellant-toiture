@@ -33,15 +33,15 @@ export function AreasPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
           
           {/* Tactical Map Container */}
-          <div className="lg:col-span-8 bg-surface border border-white/10 rounded-2xl overflow-hidden relative shadow-2xl h-[600px] group/map">
+          <div className="lg:col-span-8 bg-white border border-slate-200/80 rounded-2xl overflow-hidden relative shadow-lg h-[600px] group/map">
             <InteractiveMap />
             
             {/* Map Decorative Overlays */}
             <div className="absolute top-4 right-4 z-20 pointer-events-none">
               <div className="flex flex-col gap-2">
-                <div className="bg-primary/80 backdrop-blur-md border border-white/10 p-2 rounded flex items-center gap-3">
+                <div className="bg-white/95 backdrop-blur-md border border-slate-200/60 p-2 rounded flex items-center gap-3 shadow-sm">
                   <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
-                  <span className="text-[9px] font-mono text-slate-400 uppercase tracking-widest">Montréal, QC</span>
+                  <span className="text-[9px] font-sans text-slate-500 font-bold uppercase tracking-widest">Montréal, QC</span>
                 </div>
               </div>
             </div>
@@ -50,35 +50,31 @@ export function AreasPage() {
           {/* Zones & Speeds */}
           <div className="lg:col-span-4 flex flex-col gap-6">
             
-            <div className="bg-surface rounded-2xl border border-white/5 p-8 hover:border-secondary/30 transition-all group">
-              <div className="w-12 h-12 rounded bg-primary border border-white/10 flex items-center justify-center mb-6 text-secondary group-hover:scale-110 transition-transform">
+            <div className="bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:border-secondary/30 transition-all group">
+              <div className="w-12 h-12 rounded bg-slate-50 border border-slate-100 flex items-center justify-center mb-6 text-secondary group-hover:scale-110 transition-transform">
                 <Navigation className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-2">{t('areas_page.list_title')}</h3>
-              <ul className="space-y-3 mt-4 text-sm text-slate-400">
-                <li className="flex justify-between items-center border-b border-white/5 pb-2">
+              <h3 className="text-xl font-headline font-bold text-primary uppercase tracking-tight mb-2">{t('areas_page.list_title')}</h3>
+              <ul className="space-y-3 mt-4 text-sm text-slate-600">
+                <li className="flex justify-between items-center border-b border-slate-100 pb-2">
                     <span className="font-headline font-bold uppercase">Montréal</span>
-                    <span className="text-secondary font-mono">HQ</span>
+                    <span className="text-secondary font-sans font-bold">HQ</span>
                 </li>
-                <li className="flex justify-between items-center border-b border-white/5 pb-2">
-                    <span className="font-headline font-bold uppercase">Laval</span>
-                    <span className="text-slate-500 font-mono">SEC-1</span>
-                </li>
-                <li className="flex justify-between items-center border-b border-white/5 pb-2">
+                <li className="flex justify-between items-center border-b border-slate-100 pb-2">
                     <span className="font-headline font-bold uppercase">Rive-Sud / Longueuil</span>
-                    <span className="text-slate-500 font-mono">SEC-2</span>
+                    <span className="text-slate-500 font-sans font-medium">SUD-1</span>
                 </li>
                 <li className="flex justify-between items-center pb-2">
                     <span className="font-headline font-bold uppercase">Rive-Nord / Repentigny</span>
-                    <span className="text-slate-500 font-mono">SEC-3</span>
+                    <span className="text-slate-500 font-sans font-medium">NORD-1</span>
                 </li>
               </ul>
             </div>
 
-            <div className="bg-surface rounded-2xl border border-white/5 p-8 flex-1 flex flex-col shadow-ambient text-center items-center justify-center">
+            <div className="bg-white rounded-2xl border border-slate-100 p-8 flex-1 flex flex-col shadow-sm text-center items-center justify-center">
                 <Clock className="w-12 h-12 text-secondary mb-4 opacity-80" />
-                <h4 className="font-headline font-bold text-white uppercase tracking-widest text-sm mb-2">{t('faq.q2')}</h4>
-                <div className="text-4xl font-headline font-black text-white mb-2 tracking-tighter"><span className="text-secondary">&lt;</span> 60 MIN</div>
+                <h4 className="font-headline font-bold text-slate-700 uppercase tracking-widest text-sm mb-2">{t('faq.q2')}</h4>
+                <div className="text-4xl font-headline font-black text-primary mb-2 tracking-tighter"><span className="text-secondary">&lt;</span> 60 MIN</div>
                 <p className="text-xs text-slate-500 max-w-[200px]">{t('trust.time_sub')}</p>
             </div>
 
