@@ -70,7 +70,7 @@ export function SavingsCalculator() {
                 </div>
                 <input 
                   type="range"
-                  min="1000"
+                  min="500"
                   max="5000"
                   step="100"
                   value={roofSize}
@@ -78,7 +78,7 @@ export function SavingsCalculator() {
                   className="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#1A9E8F] transition-all"
                 />
                 <div className="flex justify-between text-[10px] text-slate-500 font-mono">
-                  <span>1,000 sq ft</span>
+                  <span>500 sq ft</span>
                   <span>5,000 sq ft</span>
                 </div>
               </div>

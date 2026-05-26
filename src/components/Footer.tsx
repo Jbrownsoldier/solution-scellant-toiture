@@ -51,7 +51,7 @@ export function Footer() {
           </Link>
           <p className="text-slate-300 text-sm leading-relaxed mb-6">{t('footer.tagline')}</p>
           <div className="flex space-x-4">
-            <a href="https://facebook.com/solutionscellanttoiture" className="text-slate-300 hover:text-secondary transition-colors" aria-label="Facebook">
+            <a href="https://www.facebook.com/profile.php?id=61590089413439" className="text-slate-300 hover:text-secondary transition-colors" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
               <SocialIcon name="facebook" />
             </a>
             <a href="https://www.instagram.com/p/DYx8aFqsPRu/" className="text-slate-300 hover:text-secondary transition-colors" aria-label="Instagram" target="_blank" rel="noopener noreferrer">

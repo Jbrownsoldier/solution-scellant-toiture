@@ -9,6 +9,7 @@ import { LanguageProvider } from './context/LanguageContext';
 const QuoteModal = lazy(() => import('./components/quote/QuoteModal').then(m => ({ default: m.QuoteModal })));
 import { ScrollToTop } from './components/ScrollToTop';
 import { EntryPopup } from './components/EntryPopup';
+import { FacebookWidget } from './components/FacebookWidget';
 
 const HomePage          = lazy(() => import('./pages/HomePage').then(m => ({ default: m.HomePage })));
 const ShingleTreatmentPage = lazy(() => import('./pages/shingle-treatment/ShingleTreatmentPage').then(m => ({ default: m.ShingleTreatmentPage })));
@@ -65,7 +66,7 @@ export default function App() {
                   "closes": "18:00"
                 },
                 "sameAs": [
-                  "https://www.facebook.com/solutionscellanttoiture"
+                  "https://www.facebook.com/profile.php?id=61590089413439"
                 ],
                 "areaServed": [
                   {
@@ -107,6 +108,7 @@ export default function App() {
             <MobileBottomBar />
             <QuoteModal />
             <EntryPopup />
+            <FacebookWidget />
           </div>
         </BrowserRouter>
       </QuoteProvider>
