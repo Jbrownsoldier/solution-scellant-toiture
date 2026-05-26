@@ -1,8 +1,10 @@
 import { Phone, ArrowRight } from 'lucide-react';
 import { useQuoteModal } from '../context/QuoteContext';
+import { useTranslation } from '../context/LanguageContext';
 
 export function MobileBottomBar() {
   const { openQuoteModal } = useQuoteModal();
+  const { t } = useTranslation();
   
   return (
     <div
@@ -29,7 +31,7 @@ export function MobileBottomBar() {
           "
         >
           <Phone className="w-4 h-4 shrink-0" strokeWidth={2} />
-          Call Now
+          {t('mobile_bar.call')}
         </a>
         <button
           onClick={openQuoteModal}
@@ -38,15 +40,16 @@ export function MobileBottomBar() {
             bg-secondary hover:brightness-110 active:scale-95
             text-primary font-headline font-bold uppercase tracking-widest text-xs
             rounded-md py-3.5
-            shadow-[0_0_15px_rgba(255,184,0,0.2)]
+            shadow-[0_0_15px_rgba(26,158,143,0.2)]
             transition-all duration-200
           "
           aria-label="Get a free quote"
         >
-          Get Quote
+          {t('mobile_bar.quote')}
           <ArrowRight className="w-4 h-4 shrink-0" strokeWidth={2.5} />
         </button>
       </div>
     </div>
   );
 }
+

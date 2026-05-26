@@ -1,8 +1,10 @@
 import { Phone, Shield, Clock, Zap, ArrowRight, Activity, Terminal } from 'lucide-react';
 import { useQuoteModal } from '../context/QuoteContext';
+import { useTranslation } from '../context/LanguageContext';
 
 export function ContactCTA() {
   const { openQuoteModal } = useQuoteModal();
+  const { t } = useTranslation();
 
   return (
     <section id="contact-form" className="py-24 bg-primary relative overflow-hidden">
@@ -15,11 +17,11 @@ export function ContactCTA() {
         {/* Contact Info Sidebar */}
         <div className="lg:col-span-5 space-y-12">
           <header>
-            <h2 className="font-headline text-5xl md:text-7xl font-black text-white leading-none tracking-tighter mb-6">
-              PROTECT <br/><span className="text-secondary text-glow">YOUR ROOF.</span>
+            <h2 className="font-headline text-5xl md:text-7xl font-black text-white leading-none tracking-tighter mb-6 uppercase">
+              {t('contact_cta.title_1')} <br/><span className="text-secondary text-glow">{t('contact_cta.title_highlight')}</span>
             </h2>
             <p className="text-on-primary-container text-lg max-w-md leading-relaxed">
-              Your roof deserves better than a band-aid fix. Start with a free GoNano inspection and get a transparent, no-obligation estimate.
+              {t('contact_cta.desc')}
             </p>
           </header>
 
@@ -29,7 +31,7 @@ export function ContactCTA() {
                 <Phone className="w-5 h-5 text-secondary" />
               </div>
               <div>
-                <span className="text-secondary font-headline font-bold text-[10px] uppercase tracking-[0.2em] block mb-1">Direct Line</span>
+                <span className="text-secondary font-headline font-bold text-[10px] uppercase tracking-[0.2em] block mb-1">{t('contact_cta.phone_label')}</span>
                 <p className="text-white text-xl font-bold font-headline">(514) 613-6904</p>
               </div>
             </div>
@@ -39,8 +41,8 @@ export function ContactCTA() {
                 <Shield className="w-5 h-5 text-secondary" />
               </div>
               <div>
-                <span className="text-secondary font-headline font-bold text-[10px] uppercase tracking-[0.2em] block mb-1">RBQ Licensed</span>
-                <p className="text-white text-xl font-bold font-headline">Certified Roof Specialist</p>
+                <span className="text-secondary font-headline font-bold text-[10px] uppercase tracking-[0.2em] block mb-1">{t('trust.rbq')}</span>
+                <p className="text-white text-xl font-bold font-headline">{t('trust.rbq_sub')}</p>
               </div>
             </div>
 
@@ -49,8 +51,8 @@ export function ContactCTA() {
                 <Clock className="w-5 h-5 text-secondary" />
               </div>
               <div>
-                <span className="text-secondary font-headline font-bold text-[10px] uppercase tracking-[0.2em] block mb-1">Response Time</span>
-                <p className="text-white text-xl font-bold font-headline">Under 2 Hours</p>
+                <span className="text-secondary font-headline font-bold text-[10px] uppercase tracking-[0.2em] block mb-1">{t('contact_cta.response_label')}</span>
+                <p className="text-white text-xl font-bold font-headline">{t('contact_cta.response_time')}</p>
               </div>
             </div>
           </div>
@@ -59,7 +61,7 @@ export function ContactCTA() {
         {/* Action Panel Container */}
         <div className="lg:col-span-7">
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-secondary/20 to-secondary/40 rounded-2x blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-secondary/20 to-secondary/40 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             
             <div className="relative bg-slate-900 border border-white/5 rounded-2xl p-8 md:p-12 overflow-hidden min-h-[500px] flex flex-col justify-center text-center">
               {/* Decorative scanline and grid */}
@@ -71,19 +73,19 @@ export function ContactCTA() {
                 </div>
                 
                 <h3 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tighter uppercase font-headline">
-                  READY TO <span className="text-secondary">GET STARTED?</span>
+                  {t('contact_cta.online_label')}
                 </h3>
                 
                 <p className="text-slate-400 mb-10 max-w-sm leading-relaxed">
-                  Skip the back-and-forth. Use our interactive portal to describe your roof and get a rapid estimate from our team.
+                  {t('contact_cta.online_desc')}
                 </p>
 
                 <button 
                   onClick={openQuoteModal}
-                  className="hidden md:group relative px-12 py-5 bg-secondary text-primary font-headline font-black text-xl uppercase tracking-widest rounded-lg shadow-[0_0_20px_rgba(26,158,143,0.4)] hover:shadow-[0_0_40px_rgba(26,158,143,0.6)] transform hover:-translate-y-1 transition-all overflow-hidden"
+                  className="relative px-12 py-5 bg-secondary text-primary font-headline font-black text-xl uppercase tracking-widest rounded-lg shadow-[0_0_20px_rgba(26,158,143,0.4)] hover:shadow-[0_0_40px_rgba(26,158,143,0.6)] transform hover:-translate-y-1 transition-all overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center gap-3">
-                    Start Free Estimate <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                    {t('contact_cta.cta_btn')} <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </span>
                   
                   <div className="absolute bottom-0 left-0 h-1 bg-white/20 w-full overflow-hidden">
@@ -94,18 +96,18 @@ export function ContactCTA() {
                 <div className="mt-12 flex flex-wrap justify-center gap-8 opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500">
                   <div className="flex items-center gap-2">
                     <Zap className="w-4 h-4 text-secondary" />
-                    <span className="text-[10px] font-mono text-white uppercase tracking-widest">Rapid Response</span>
+                    <span className="text-[10px] font-mono text-white uppercase tracking-widest">{t('contact_cta.feature_1')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Activity className="w-4 h-4 text-secondary" />
-                    <span className="text-[10px] font-mono text-white uppercase tracking-widest">Secure Form</span>
+                    <span className="text-[10px] font-mono text-white uppercase tracking-widest">{t('contact_cta.feature_2')}</span>
                   </div>
                 </div>
               </div>
 
               {/* Decorative side text */}
               <div className="absolute bottom-4 right-6 text-[8px] font-mono text-slate-700 pointer-events-none uppercase tracking-[0.4em] rotate-90 origin-right">
-                GoNano Interface v1.0 // Active
+                {t('contact_cta.footer_tag')}
               </div>
             </div>
           </div>

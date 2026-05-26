@@ -4,8 +4,8 @@ import { Activity, Zap } from 'lucide-react';
 
 const regions = [
   {
-    id: 'milton',
-    name: 'Milton (HQ)',
+    id: 'montreal',
+    name: 'Montréal (HQ)',
     path: 'M 150,100 L 250,100 L 300,180 L 200,250 L 100,180 Z',
     nodePos: { x: 200, y: 170 },
     status: 'Operational',
@@ -13,29 +13,29 @@ const regions = [
     color: 'fill-secondary/20 hover:fill-secondary/40'
   },
   {
-    id: 'oakville',
-    name: 'Oakville (SEC-1)',
+    id: 'laval',
+    name: 'Laval (SEC-1)',
     path: 'M 200,250 L 300,180 L 400,250 L 350,350 L 250,350 Z',
     nodePos: { x: 300, y: 280 },
-    status: 'Standby',
+    status: 'Operational',
     latency: '1.2ms',
     color: 'fill-slate-800/40 hover:fill-secondary/30'
   },
   {
-    id: 'burlington',
-    name: 'Burlington (SEC-2)',
+    id: 'rivesud',
+    name: 'Rive-Sud / Longueuil (SEC-2)',
     path: 'M 100,180 L 200,250 L 250,350 L 150,400 L 50,300 Z',
     nodePos: { x: 150, y: 290 },
-    status: 'Active',
+    status: 'Operational',
     latency: '0.8ms',
     color: 'fill-slate-800/40 hover:fill-secondary/30'
   },
   {
-    id: 'mississauga',
-    name: 'Mississauga (SEC-3)',
+    id: 'rivenord',
+    name: 'Rive-Nord / Repentigny (SEC-3)',
     path: 'M 300,180 L 450,150 L 550,220 L 500,320 L 400,250 Z',
     nodePos: { x: 420, y: 220 },
-    status: 'Standby',
+    status: 'Operational',
     latency: '1.5ms',
     color: 'fill-slate-800/40 hover:fill-secondary/30'
   }

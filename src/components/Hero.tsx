@@ -12,23 +12,36 @@
  * Video asset: /public/electric-video.mp4
  */
 
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Phone } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useQuoteModal } from '../context/QuoteContext';
+import { useTranslation } from '../context/LanguageContext';
 
 // Register the plugin once at module level
 gsap.registerPlugin(ScrollTrigger);
 
 export function Hero() {
   const { openQuoteModal } = useQuoteModal();
+  const { t } = useTranslation();
+
+  const [isMobile, setIsMobile] = useState(false);
 
   /* ── Refs ─────────────────────────────────────────────────────────── */
   const sectionRef  = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
   const ctaRef      = useRef<HTMLDivElement>(null);
   const subTextRef  = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -90,18 +103,27 @@ export function Hero() {
       ref={sectionRef}
       className="hero-video-section relative w-full h-screen overflow-hidden"
     >
-      {/* ── Background video ─────────────────────────────────────────── */}
-      <video
-        className="hero-video-bg"
-        src="/electric-video.mp4"
-        poster="/hero-poster.png"
-        autoPlay
-        muted
-        playsInline
-        loop
-        preload="auto"
-        aria-hidden="true"
-      />
+      {/* ── Background visual ─────────────────────────────────────────── */}
+      {isMobile ? (
+        <img
+          className="hero-video-bg object-cover w-full h-full bg-[#0E1B2A] bg-[radial-gradient(ellipse_at_center,rgba(26,158,143,0.15),transparent)]"
+          src="/hero-poster.png"
+          alt="Roof sealing background"
+          fetchpriority="high"
+        />
+      ) : (
+        <video
+          className="hero-video-bg bg-[#0E1B2A] bg-[radial-gradient(ellipse_at_center,rgba(26,158,143,0.15),transparent)]"
+          src="/hero-roof-sealing.mp4"
+          poster="/hero-poster.png"
+          autoPlay
+          muted
+          playsInline
+          loop
+          preload="auto"
+          aria-hidden="true"
+        />
+      )}
 
       {/* ── Gradient overlay ── */}
       <div className="hero-video-overlay" aria-hidden="true" />
@@ -114,15 +136,15 @@ export function Hero() {
 
         {/* ── Badge ────────────────────────────────────────────────────── */}
         <span className="text-[#1A9E8F] font-headline font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-6 bg-[#1A9E8F]/10 px-4 py-1.5 rounded-full border border-[#1A9E8F]/20 inline-block">
-          Certified Roof Specialists · Grand Montréal
+          {t('hero.badge')}
         </span>
 
         {/* ── Headline (fades out on scroll) ───────────────────────────── */}
         <div ref={headlineRef} className="will-change-transform will-change-opacity">
           <h1 className="hero-headline">
-            Revitalize Your Roof with{' '}
-            <span className="text-[#1A9E8F]">GoNano</span>{' '}
-            <span className="text-[#1A9E8F]">Technology.</span>
+            {t('hero.headline_1')}{' '}
+            <span className="text-[#1A9E8F]">{t('hero.headline_highlight').split(' ')[0]}</span>{' '}
+            <span className="text-[#1A9E8F]">{t('hero.headline_highlight').split(' ').slice(1).join(' ')}</span>
           </h1>
         </div>
 
@@ -136,7 +158,7 @@ export function Hero() {
             className="hero-cta-primary btn-magnetic"
             aria-label="Get a free roof estimate"
           >
-            <span>GET A FREE ESTIMATE</span>
+            <span>{t('hero.cta_primary')}</span>
             <ArrowRight className="w-5 h-5 flex-shrink-0" />
           </button>
 
@@ -156,10 +178,7 @@ export function Hero() {
           className="max-w-3xl mt-0 will-change-opacity"
         >
           <p className="hero-sub-text">
-            Save up to 75 % vs. full roof replacement. Our patented GoNano
-            nanoscopic silica sealant penetrates shingle layers, bonds
-            internally, and forms a permanent hydrophobic shield — applied in
-            under 60 minutes with zero construction waste. 15-year guarantee.
+            {t('hero.subtext')}
           </p>
 
           <button
@@ -167,7 +186,7 @@ export function Hero() {
             className="hidden md:flex hero-cta-primary btn-magnetic mt-8"
             aria-label="Get a free roof estimate"
           >
-            <span>GET A FREE ESTIMATE</span>
+            <span>{t('hero.cta_primary')}</span>
             <ArrowRight className="w-5 h-5 flex-shrink-0" />
           </button>
         </div>
@@ -190,3 +209,4 @@ export function Hero() {
     </section>
   );
 }
+

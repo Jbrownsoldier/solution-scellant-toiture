@@ -3,6 +3,7 @@ import { Star, ArrowRight, Quote } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { useCountUp } from '../hooks/useCountUp';
+import { useTranslation } from '../context/LanguageContext';
 
 function AnimatedRating() {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.5 });
@@ -17,6 +18,8 @@ function AnimatedRating() {
 }
 
 export function HomeReviewsPreview() {
+  const { t } = useTranslation();
+
   return (
     <section className="px-6 lg:px-8 py-24 bg-surface relative overflow-hidden">
       {/* Pulsing background grid */}
@@ -32,12 +35,12 @@ export function HomeReviewsPreview() {
             {/* Stats Summary */}
             <ScrollReveal variant="fade-left">
             <div>
-                <span className="text-secondary font-headline uppercase font-black tracking-widest text-sm mb-4 block">Proven Results</span>
+                <span className="text-secondary font-headline uppercase font-black tracking-widest text-sm mb-4 block">{t('reviews.proven')}</span>
                 <h2 className="font-headline text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter mb-6">
-                    Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-blue-500">Homeowners</span>
+                    {t('reviews.trusted')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-blue-500">{t('reviews.homeowners')}</span>
                 </h2>
                 <p className="text-slate-400 text-lg leading-relaxed mb-8">
-                    Our GoNano roof treatments are backed by a 15-year guarantee and consistently earn 5-star reviews from homeowners across the Greater Montréal area.
+                    {t('reviews.desc')}
                 </p>
 
                 <div className="flex items-center gap-6 mb-10">
@@ -49,12 +52,12 @@ export function HomeReviewsPreview() {
                                 <Star key={star} className="w-5 h-5 fill-secondary text-secondary" />
                             ))}
                         </div>
-                        <div className="text-sm text-slate-400 font-headline tracking-wider uppercase">Average Rating</div>
+                        <div className="text-sm text-slate-400 font-headline tracking-wider uppercase">{t('reviews.avg_rating')}</div>
                     </div>
                 </div>
 
                 <Link to="/reviews" className="btn btn-outline inline-flex flex-row items-center justify-center gap-2 group w-full sm:w-auto">
-                    Read All Reviews
+                    {t('reviews.read_all')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
             </div>
@@ -73,15 +76,15 @@ export function HomeReviewsPreview() {
                         ))}
                     </div>
                     <p className="text-lg text-white font-medium leading-relaxed mb-8">
-                        "We were quoted $18,000 for a full roof replacement. Solution Scellant Toiture applied the GoNano treatment in under an hour — our roof looks brand new and we saved over $14,000. The team was professional, clean, and the 15-year warranty gives us total peace of mind."
+                        {t('reviews.quote')}
                     </p>
                     <div className="flex items-center gap-4">
                         <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center text-primary font-headline font-black shadow-lg shadow-secondary/20 border border-secondary/30">
                             ML
                         </div>
                         <div>
-                            <div className="font-headline font-bold text-white uppercase tracking-tight">Marie Lefebvre</div>
-                            <div className="text-sm text-secondary font-mono">GoNano Sealant Treatment · Laval</div>
+                            <div className="font-headline font-bold text-white uppercase tracking-tight">{t('reviews.author')}</div>
+                            <div className="text-sm text-secondary font-mono">{t('reviews.location')}</div>
                         </div>
                     </div>
                 </div>
@@ -93,3 +96,4 @@ export function HomeReviewsPreview() {
     </section>
   );
 }
+

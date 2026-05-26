@@ -1,25 +1,26 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCallback } from 'react';
-
-const serviceLinks = [
-  { label: 'GoNano Sealant Treatment', to: '/gonano-treatment' },
-  { label: 'Roof Inspection', to: '/inspection' },
-  { label: 'Preventive Maintenance', to: '/services' },
-  { label: 'All Services', anchor: 'services' },
-];
-
-const exploreLinks = [
-  { label: 'Services', to: '/services' },
-  { label: 'Zones desservies', to: '/areas' },
-  { label: 'Avis', to: '/reviews' },
-  { label: 'À propos', to: '/about' },
-  { label: 'Contact', to: '/contact' },
-];
+import { useTranslation } from '../context/LanguageContext';
 
 export function Footer() {
   const year = new Date().getFullYear();
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const serviceLinks = [
+    { label: t('services_preview.gonano_title'), to: '/traitement-protecteur' },
+    { label: t('services_preview.inspection_title'), to: '/inspection' },
+    { label: t('services_preview.maintenance_title'), to: '/services' },
+  ];
+
+  const exploreLinks = [
+    { label: t('nav.services'), to: '/services' },
+    { label: t('nav.zones'), to: '/areas' },
+    { label: t('nav.reviews'), to: '/reviews' },
+    { label: t('nav.about'), to: '/about' },
+    { label: t('nav.contact'), to: '/contact' },
+  ];
 
   const handleAnchorClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, anchor: string) => {
     e.preventDefault();
@@ -45,16 +46,13 @@ export function Footer() {
               height="60"
             />
           </Link>
-          <p className="text-slate-400 text-sm leading-relaxed mb-6">Eco-friendly nanotechnological roof revitalisation. Restore your roof without replacement — powered by GoNano.</p>
+          <p className="text-slate-400 text-sm leading-relaxed mb-6">{t('footer.tagline')}</p>
           <div className="flex space-x-4">
             <a href="https://facebook.com/solutionscellanttoiture" className="text-slate-400 hover:text-secondary transition-colors" aria-label="Facebook">
               <SocialIcon name="facebook" />
             </a>
-            <a href="https://instagram.com/solutionscellanttoiture" className="text-slate-400 hover:text-secondary transition-colors" aria-label="Instagram">
+            <a href="https://www.instagram.com/p/DYx8aFqsPRu/" className="text-slate-400 hover:text-secondary transition-colors" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <SocialIcon name="instagram" />
-            </a>
-            <a href="https://linkedin.com/company/solutionscellanttoiture" className="text-slate-400 hover:text-secondary transition-colors" aria-label="LinkedIn">
-              <SocialIcon name="linkedin" />
             </a>
           </div>
         </div>
@@ -62,26 +60,7 @@ export function Footer() {
         <div>
           <h4 className="text-white font-headline font-bold mb-6 text-xs uppercase tracking-widest">Solutions</h4>
           <ul className="space-y-4">
-            {serviceLinks.slice(0, 3).map((link) => (
-              <li key={link.label}>
-                {'to' in link && link.to ? (
-                  <Link to={link.to} className="text-slate-400 hover:text-white transition-transform duration-200 inline-block hover:translate-x-1 text-sm">
-                    {link.label}
-                  </Link>
-                ) : (
-                  <a href={`/#${link.anchor}`} onClick={(e) => handleAnchorClick(e, link.anchor!)} className="text-slate-400 hover:text-white transition-transform duration-200 inline-block hover:translate-x-1 text-sm">
-                    {link.label}
-                  </a>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-white font-headline font-bold mb-6 text-xs uppercase tracking-widest">Entreprise</h4>
-          <ul className="space-y-4">
-            {exploreLinks.slice(0, 3).map((link) => (
+            {serviceLinks.map((link) => (
               <li key={link.label}>
                 <Link to={link.to} className="text-slate-400 hover:text-white transition-transform duration-200 inline-block hover:translate-x-1 text-sm">
                   {link.label}
@@ -92,27 +71,36 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white font-headline font-bold mb-6 text-xs uppercase tracking-widest">Infolettre</h4>
-          <p className="text-slate-400 text-sm mb-4">Recevez nos conseils d'entretien de toiture et promotions GoNano.</p>
-          <div className="flex">
-            <input className="bg-primary/50 border-0 rounded-l-md px-4 py-2 text-white text-sm w-full focus:ring-1 focus:ring-secondary focus:outline-none" placeholder="Courriel" type="email" />
-            <button className="bg-secondary px-4 py-2 rounded-r-md text-primary font-bold hover:brightness-110 transistion-all">
-              OK
-            </button>
-          </div>
-          <p className="text-slate-500 text-xs mt-6">
-            RBQ · Spécialiste en toiture certifié
+          <h4 className="text-white font-headline font-bold mb-6 text-xs uppercase tracking-widest">{t('footer.links')}</h4>
+          <ul className="space-y-4">
+            {exploreLinks.map((link) => (
+              <li key={link.label}>
+                <Link to={link.to} className="text-slate-400 hover:text-white transition-transform duration-200 inline-block hover:translate-x-1 text-sm">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-white font-headline font-bold mb-6 text-xs uppercase tracking-widest">Contact</h4>
+          <p className="text-slate-400 text-sm mb-2"><strong>{t('footer.phone')}:</strong> (514) 613-6904</p>
+          <p className="text-slate-400 text-sm mb-6"><strong>{t('footer.hours')}:</strong> {t('footer.hours_val')}</p>
+          <p className="text-slate-500 text-xs">
+            {t('footer.license')} · Spécialiste certifié en protection de toiture
           </p>
         </div>
       </div>
 
       <div className="px-8 py-8 bg-surface border-t border-white/5 text-center flex flex-col items-center">
-        <p className="text-slate-500 text-xs font-semibold uppercase tracking-widest mb-2">© {year} Solution Scellant Toiture. Tous droits réservés.</p>
+        <p className="text-slate-500 text-xs font-semibold uppercase tracking-widest mb-2">© {year} Solution Scellant Toiture. {t('footer.rights')}</p>
         <p className="text-slate-500 text-xs">Grand Montréal, Québec, Canada</p>
       </div>
     </footer>
   );
 }
+
 
 function SocialIcon({ name }: { name: string }) {
   switch (name) {
