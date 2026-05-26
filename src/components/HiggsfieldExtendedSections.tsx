@@ -202,31 +202,31 @@ export function HiggsfieldExtendedSections() {
             {/* Cost of Inaction overlay box */}
             <div className="relative lg:absolute lg:bottom-6 lg:left-6 lg:right-6 bg-[#1F2421]/95 text-white p-6 rounded-xl border border-white/10 shadow-2xl backdrop-blur-md mt-0 lg:mt-0">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-red-500/10 text-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-secondary/15 text-secondary rounded-lg flex items-center justify-center flex-shrink-0">
                   <ShieldAlert className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-red-400 font-headline uppercase font-black tracking-widest text-[10px] mb-1.5 block">
+                  <span className="text-secondary font-headline uppercase font-black tracking-widest text-[10px] mb-1.5 block">
                     {t('extended.inaction_badge')}
                   </span>
                   <h4 className="font-display font-black text-md uppercase tracking-tight text-white mb-2">
                     {t('extended.inaction_title')}
-                    <span className="text-red-400"> {t('extended.inaction_title_highlight')}</span>
+                    <span className="text-secondary"> {t('extended.inaction_title_highlight')}</span>
                   </h4>
                   <p className="text-slate-400 text-xs leading-relaxed mb-4">
                     {t('extended.inaction_desc')}
                   </p>
                   <ul className="text-xs text-slate-300 space-y-2 border-t border-white/10 pt-3">
                     <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-red-400 rounded-full" />
+                      <span className="w-1.5 h-1.5 bg-secondary rounded-full" />
                       {t('extended.inaction_risk_1')}
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-red-400 rounded-full" />
+                      <span className="w-1.5 h-1.5 bg-secondary rounded-full" />
                       {t('extended.inaction_risk_2')}
                     </li>
                     <li className="flex items-center gap-2 font-bold text-white">
-                      <span className="w-1.5 h-1.5 bg-red-400 rounded-full animate-ping" />
+                      <span className="w-1.5 h-1.5 bg-secondary rounded-full animate-ping" />
                       {t('extended.inaction_risk_3')}
                     </li>
                   </ul>

@@ -166,7 +166,11 @@ export function Navigation() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`p-2 transition-colors focus-visible:outline-none focus:ring-2 focus:ring-secondary rounded-lg ${
-                isMobileMenuOpen || !isScrolled ? 'text-white' : 'text-[#1F2421]'
+                isMobileMenuOpen 
+                  ? 'text-[#1F2421]' 
+                  : isScrolled 
+                    ? 'text-[#1F2421]' 
+                    : 'text-white'
               } hover:text-secondary`}
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMobileMenuOpen}
@@ -184,7 +188,7 @@ export function Navigation() {
       {/* Mobile Menu */}
       <div
         className={`
-          md:hidden fixed inset-0 z-40 bg-primary/98 backdrop-blur-md pt-24
+          md:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-24
           transition-all duration-300 ease-out
           ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}
         `}
@@ -196,7 +200,7 @@ export function Navigation() {
                 key={link.path}
                 to={link.path}
                 onClick={handleNavClick}
-                className="text-xl font-headline font-bold uppercase tracking-widest text-slate-300 hover:text-white active:text-secondary transition-colors py-4 border-b border-white/5"
+                className="text-xl font-headline font-bold uppercase tracking-widest text-secondary hover:text-primary active:text-secondary transition-colors py-4 border-b border-slate-200/60"
               >
                 {link.label}
               </Link>
@@ -204,15 +208,15 @@ export function Navigation() {
           </div>
           
           <div className="flex flex-col gap-4 mt-8">
-            <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-4">
-              <span className="text-slate-400 font-headline font-bold uppercase text-xs tracking-wider">
+            <div className="flex items-center justify-between border-b border-slate-200/60 pb-4 mb-4">
+              <span className="text-slate-500 font-headline font-bold uppercase text-xs tracking-wider">
                 {language === 'fr' ? 'Changer de langue' : 'Switch Language'}
               </span>
               <LanguageToggle />
             </div>
             <a 
               href="tel:+14383926208"
-              className="w-full py-4 border border-white/20 text-white font-headline font-bold uppercase text-sm tracking-widest rounded flex justify-center items-center hover:bg-white hover:text-primary transition-all duration-300"
+              className="w-full py-4 border border-secondary/30 text-secondary font-headline font-bold uppercase text-sm tracking-widest rounded flex justify-center items-center hover:bg-secondary hover:text-white transition-all duration-300"
             >
               (438) 392-6208
             </a>
@@ -221,7 +225,7 @@ export function Navigation() {
                 setIsMobileMenuOpen(false);
                 openQuoteModal();
               }}
-              className="w-full py-4 bg-secondary text-white font-headline font-bold uppercase text-sm tracking-widest rounded flex justify-center items-center"
+              className="w-full py-4 bg-secondary text-white font-headline font-bold uppercase text-sm tracking-widest rounded flex justify-center items-center hover:bg-secondary/90 transition-colors"
             >
               {t('nav.cta')}
             </button>
