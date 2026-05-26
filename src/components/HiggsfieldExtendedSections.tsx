@@ -191,16 +191,16 @@ export function HiggsfieldExtendedSections() {
           </div>
 
           {/* Product Closeup Asset Panel */}
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 aspect-[4/3] bg-white group cursor-pointer">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 flex flex-col bg-white group cursor-pointer lg:aspect-[4/3]">
             {/* Glistening Shingles Closeup Image */}
             <img 
               src="/shingles-beading.png" 
               alt="Glistening shingles close up with water drops" 
-              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+              className="w-full h-48 sm:h-64 lg:h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
             {/* Cost of Inaction overlay box */}
-            <div className="absolute bottom-6 left-6 right-6 bg-[#1F2421]/95 text-white p-6 rounded-xl border border-white/10 shadow-2xl backdrop-blur-md">
+            <div className="relative lg:absolute lg:bottom-6 lg:left-6 lg:right-6 bg-[#1F2421]/95 text-white p-6 rounded-xl border border-white/10 shadow-2xl backdrop-blur-md mt-0 lg:mt-0">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-red-500/10 text-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
                   <ShieldAlert className="w-5 h-5" />
