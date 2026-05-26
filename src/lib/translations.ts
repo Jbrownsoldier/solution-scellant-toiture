@@ -12,6 +12,7 @@ export const translations: Record<string, any> = {
       badge: 'Spécialistes Certifiés du Toit · Grand Montréal',
       headline_1: 'Revitalisez Votre Toit avec un',
       headline_highlight: 'Scellant Protecteur.',
+      cta_primary: 'OBTENIR UNE ÉVALUATION GRATUITE',
       cta_secondary: '(438) 392-6208',
       subtext: 'Économisez jusqu\'à 80 % par rapport à un remplacement complet de toiture. Notre scellant protecteur et revitalisant de bardeaux pénètre en profondeur pour restaurer la flexibilité de l\'asphalte et former un bouclier hydrophobe permanent — appliqué en moins de 60 minutes avec zéro déchet de construction. Garantie de 10 à 15 ans.',
     },
