@@ -2,7 +2,7 @@ import { Hexagon, CheckCircle2, Award, ArrowRight } from 'lucide-react';
 import { useTranslation } from '../../context/LanguageContext';
 
 export function AboutPage() {
-  const { t } = useTranslation();
+  const { language, t } = useTranslation();
 
   return (
     <main className="pt-24 min-h-screen bg-primary">
@@ -94,22 +94,24 @@ export function AboutPage() {
                     <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-secondary/50 rounded-tr-xl"></div>
                     <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-secondary/50 rounded-bl-xl"></div>
 
-                    <h3 className="font-headline font-bold text-primary text-xl mb-4 uppercase tracking-widest border-b border-slate-100 pb-4">Fiche technique / Stats</h3>
+                    <h3 className="font-headline font-bold text-primary text-xl mb-4 uppercase tracking-widest border-b border-slate-100 pb-4">
+                      {language === 'fr' ? 'Fiche technique' : 'Technical Specifications'}
+                    </h3>
                     <ul className="space-y-4 font-mono text-sm text-slate-600">
                         <li className="flex justify-between items-center group border-b border-slate-50 pb-2">
-                            <span>Hydrophobie / Repels Water</span>
+                            <span>{language === 'fr' ? 'Hydrophobie' : 'Hydrophobicity'}</span>
                             <span className="text-secondary font-bold">100%</span>
                         </li>
                         <li className="flex justify-between items-center group border-b border-slate-50 pb-2">
-                            <span>Granule Retention</span>
+                            <span>{language === 'fr' ? 'Rétention des granules' : 'Granule Retention'}</span>
                             <span className="text-secondary font-bold">100%</span>
                         </li>
                         <li className="flex justify-between items-center group border-b border-slate-50 pb-2">
-                            <span>UV Protection</span>
+                            <span>{language === 'fr' ? 'Protection UV' : 'UV Protection'}</span>
                             <span className="text-secondary font-bold">100%</span>
                         </li>
                         <li className="flex justify-between items-center group">
-                            <span>Eco-Friendly Rating</span>
+                            <span>{language === 'fr' ? 'Classement écologique' : 'Eco-Friendly Rating'}</span>
                             <span className="text-secondary font-bold">100%</span>
                         </li>
                     </ul>

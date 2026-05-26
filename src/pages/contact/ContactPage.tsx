@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from '../../context/LanguageContext';
 
 export function ContactPage() {
-    const { t } = useTranslation();
+    const { language, t } = useTranslation();
     const [isSubmitting, setIsSubmitting] = React.useState(false);
     const [submitted, setSubmitted] = React.useState(false);
 
@@ -45,11 +45,11 @@ export function ContactPage() {
                         <div className="space-y-12">
                             <div className="flex flex-col gap-4">
                                 <span className="text-secondary text-xs font-headline font-bold uppercase tracking-[0.2em] flex items-center gap-2">
-                                    <MapPin className="w-4 h-4" /> Global Positioning
+                                    <MapPin className="w-4 h-4" /> {language === 'fr' ? 'Localisation' : 'Global Positioning'}
                                 </span>
                                 <div className="border border-slate-200 bg-slate-50 p-6 rounded-lg hover:bg-white hover:shadow-sm transition-all duration-300">
                                     <p className="text-primary font-sans text-sm leading-relaxed font-semibold">
-                                        Primary Hub: Montréal, Québec <br />
+                                        {language === 'fr' ? 'Siège social : Montréal, Québec' : 'Primary Hub: Montréal, Québec'} <br />
                                         <span className="text-slate-500 mt-2 block font-medium">{t('trust.montreal')}</span>
                                     </p>
                                 </div>
@@ -67,7 +67,7 @@ export function ContactPage() {
 
                             <div className="flex flex-col gap-4">
                                 <span className="text-secondary text-xs font-headline font-bold uppercase tracking-[0.2em] flex items-center gap-2">
-                                    <Mail className="w-4 h-4" /> Digital Dispatch
+                                    <Mail className="w-4 h-4" /> {language === 'fr' ? 'Courriel' : 'Digital Dispatch'}
                                 </span>
                                 <div className="border border-slate-200 bg-slate-50 p-6 rounded-lg hover:bg-white hover:shadow-sm transition-all duration-300 flex justify-between items-center group">
                                     <a href="mailto:info@solutionscellanttoiture.com" className="text-primary font-sans font-bold text-sm group-hover:text-secondary transition-colors truncate pr-4">info@solutionscellanttoiture.com</a>
@@ -101,7 +101,7 @@ export function ContactPage() {
                                     onClick={() => setSubmitted(false)}
                                     className="mt-8 text-secondary font-headline font-bold uppercase text-xs tracking-widest border-b border-transparent hover:border-secondary pb-1 transition-colors"
                                 >
-                                    Re-Initiate Protocol
+                                    {language === 'fr' ? 'Renvoyer un message' : 'Re-Initiate Protocol'}
                                 </button>
                             </div>
                         ) : (
@@ -132,7 +132,7 @@ export function ContactPage() {
                                         required
                                         rows={4}
                                         className="w-full bg-slate-50 border border-slate-200 rounded-lg p-4 text-slate-800 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary/50 transition-all font-sans text-sm resize-none"
-                                        placeholder="Detail your requirements..."
+                                        placeholder={language === 'fr' ? 'Détails de votre demande...' : 'Detail your requirements...'}
                                     ></textarea>
                                 </div>
 
@@ -140,7 +140,7 @@ export function ContactPage() {
                                     disabled={isSubmitting}
                                     className={`w-full ${isSubmitting ? 'bg-secondary/50 text-white animate-pulse' : 'bg-secondary text-white hover:brightness-110 active:scale-[0.98]'} font-headline font-black uppercase tracking-widest p-4 rounded-lg flex items-center justify-center gap-3 transition-all`}
                                 >
-                                    {isSubmitting ? 'Sending...' : t('contact_page.form_send')}
+                                    {isSubmitting ? (language === 'fr' ? 'Envoi en cours...' : 'Sending...') : t('contact_page.form_send')}
                                     {!isSubmitting && <ChevronRight className="w-5 h-5" />}
                                 </button>
                             </form>

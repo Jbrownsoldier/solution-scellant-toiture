@@ -5,7 +5,7 @@ import { useTranslation } from '../../context/LanguageContext';
 
 export function InspectionPage() {
   const { openQuoteModal } = useQuoteModal();
-  const { t } = useTranslation();
+  const { language, t } = useTranslation();
 
   return (
     <main>
@@ -79,28 +79,31 @@ export function InspectionPage() {
       <section className="py-24 bg-primary border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-8">
           <ScrollReveal variant="fade-up" className="text-center mb-16">
-            <h2 className="font-headline text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter mb-4">Inspection <span className="text-secondary">Process</span></h2>
+            <h2 className="font-headline text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter mb-4">
+              {language === 'fr' ? "Processus d'" : "Inspection "}
+              <span className="text-secondary">{language === 'fr' ? "inspection" : "Process"}</span>
+            </h2>
           </ScrollReveal>
 
           <ScrollReveal stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ScrollRevealItem>
               <div className="service-card bg-primary-container border border-slate-700/60 group h-full text-center hover:bg-primary-container/80 transition-colors">
                 <Search className="card-icon mb-6 w-10 h-10 mx-auto" />
-                <h3 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-4">Diagnostic</h3>
+                <h3 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-4">{language === 'fr' ? 'Diagnostic' : 'Diagnosis'}</h3>
                 <p className="text-sm text-slate-300 leading-relaxed">{t('inspection_page.step1_d')}</p>
               </div>
             </ScrollRevealItem>
             <ScrollRevealItem>
               <div className="service-card bg-primary-container border border-slate-700/60 group h-full text-center hover:bg-primary-container/80 transition-colors">
                 <ClipboardCheck className="card-icon mb-6 w-10 h-10 mx-auto" />
-                <h3 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-4">Thermique</h3>
+                <h3 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-4">{language === 'fr' ? 'Thermique' : 'Thermal'}</h3>
                 <p className="text-sm text-slate-300 leading-relaxed">{t('inspection_page.step2_d')}</p>
               </div>
             </ScrollRevealItem>
             <ScrollRevealItem>
               <div className="service-card bg-primary-container border border-slate-700/60 group h-full text-center hover:bg-primary-container/80 transition-colors">
                 <FileText className="card-icon mb-6 w-10 h-10 mx-auto" />
-                <h3 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-4">Rapport</h3>
+                <h3 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-4">{language === 'fr' ? 'Rapport' : 'Report'}</h3>
                 <p className="text-sm text-slate-300 leading-relaxed">{t('inspection_page.step4_d')}</p>
               </div>
             </ScrollRevealItem>

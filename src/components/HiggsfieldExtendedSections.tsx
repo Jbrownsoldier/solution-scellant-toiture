@@ -96,7 +96,7 @@ export function HiggsfieldExtendedSections() {
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               loading="lazy"
             />
-            <div className="absolute bottom-6 right-6 z-10 bg-secondary text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded shadow-lg">
+            <div className="absolute bottom-3 right-3 md:bottom-6 md:right-6 z-10 bg-secondary text-white text-[9px] md:text-xs font-bold uppercase tracking-wider px-2.5 py-1.5 md:px-4 md:py-2 rounded shadow-lg whitespace-nowrap">
               {t('extended.slider_after')}
             </div>
           </div>
@@ -113,7 +113,7 @@ export function HiggsfieldExtendedSections() {
                 className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                 loading="lazy"
               />
-              <div className="absolute bottom-6 left-6 z-10 bg-[#1F2421] text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded shadow-lg">
+              <div className="absolute bottom-3 left-3 md:bottom-6 md:left-6 z-10 bg-[#1F2421] text-white text-[9px] md:text-xs font-bold uppercase tracking-wider px-2.5 py-1.5 md:px-4 md:py-2 rounded shadow-lg whitespace-nowrap">
                 {t('extended.slider_before')}
               </div>
             </div>

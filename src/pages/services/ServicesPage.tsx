@@ -6,7 +6,7 @@ import { SavingsCalculator } from '../../components/SavingsCalculator';
 
 export function ServicesPage() {
   const { openQuoteModal } = useQuoteModal();
-  const { t } = useTranslation();
+  const { language, t } = useTranslation();
 
   return (
     <main className="pt-24 min-h-screen bg-primary">
@@ -71,7 +71,7 @@ export function ServicesPage() {
               <h3 className="text-xl font-headline font-bold text-white uppercase tracking-tight mb-4">{t('services_preview.inspection_title')}</h3>
               <p className="text-sm text-slate-300 leading-relaxed mb-6">{t('services_preview.inspection_desc')}</p>
               <a href="/inspection" className="text-secondary inline-flex items-center gap-2 hover:underline text-xs font-bold font-headline uppercase tracking-wider">
-                En savoir plus <ArrowRight className="w-4 h-4" />
+                {language === 'fr' ? 'En savoir plus' : 'Learn more'} <ArrowRight className="w-4 h-4" />
               </a>
             </div>
             <div className="bg-white/[0.03] border border-white/10 p-8 rounded-xl hover:bg-white/[0.06] hover:border-secondary/30 transition-colors group">

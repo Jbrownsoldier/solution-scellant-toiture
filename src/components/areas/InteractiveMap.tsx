@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Activity, Zap } from 'lucide-react';
+import { useTranslation } from '../../context/LanguageContext';
 
 const regions = [
   {
@@ -34,6 +35,7 @@ const regions = [
 
 export function InteractiveMap() {
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
+  const { language } = useTranslation();
 
   return (
     <div className="relative w-full h-full min-h-[500px] flex items-center justify-center bg-slate-50 rounded-xl overflow-hidden border border-slate-100">
@@ -164,23 +166,34 @@ export function InteractiveMap() {
                   <h4 className="text-primary font-headline font-black uppercase text-lg tracking-tight">
                     {regions.find(r => r.id === hoveredRegion)?.name}
                   </h4>
-                  <p className="text-slate-500 text-xs font-sans uppercase font-bold tracking-wider">STATUT DE SERVICE : <span className="text-secondary font-bold">ACTIF</span></p>
+                  <p className="text-slate-500 text-xs font-sans uppercase font-bold tracking-wider">
+                    {language === 'fr' ? 'STATUT DE SERVICE : ' : 'SERVICE STATUS: '}
+                    <span className="text-secondary font-bold">{language === 'fr' ? 'ACTIF' : 'ACTIVE'}</span>
+                  </p>
                 </div>
               </div>
 
               <div className="flex gap-8">
                 <div className="text-center">
-                  <div className="text-slate-400 text-[10px] font-headline uppercase font-bold tracking-widest mb-1">Activité</div>
-                  <div className="text-primary font-sans text-xl font-bold">Stable</div>
+                  <div className="text-slate-400 text-[10px] font-headline uppercase font-bold tracking-widest mb-1">
+                    {language === 'fr' ? 'Activité' : 'Activity'}
+                  </div>
+                  <div className="text-primary font-sans text-xl font-bold">
+                    {language === 'fr' ? 'Stable' : 'Stable'}
+                  </div>
                 </div>
                 <div className="text-center border-l border-slate-200 pl-8">
-                  <div className="text-slate-400 text-[10px] font-headline uppercase font-bold tracking-widest mb-1">Délai d'intervention</div>
+                  <div className="text-slate-400 text-[10px] font-headline uppercase font-bold tracking-widest mb-1">
+                    {language === 'fr' ? "Délai d'intervention" : 'Response Time'}
+                  </div>
                   <div className="text-secondary font-sans text-xl font-bold">
                     &lt; 24h
                   </div>
                 </div>
                 <div className="text-center border-l border-slate-200 pl-8">
-                  <div className="text-slate-400 text-[10px] font-headline uppercase font-bold tracking-widest mb-1">Disponibilité</div>
+                  <div className="text-slate-400 text-[10px] font-headline uppercase font-bold tracking-widest mb-1">
+                    {language === 'fr' ? 'Disponibilité' : 'Availability'}
+                  </div>
                   <div className="flex items-center gap-2 mt-1">
                     <Zap className="w-4 h-4 text-secondary fill-secondary" />
                     <span className="text-primary font-headline font-black text-xs uppercase tracking-widest">
@@ -203,7 +216,9 @@ export function InteractiveMap() {
         >
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-secondary animate-ping"></div>
-            <span className="text-primary font-headline text-[10px] font-black uppercase tracking-[0.2em]">Couverture Active</span>
+            <span className="text-primary font-headline text-[10px] font-black uppercase tracking-[0.2em]">
+              {language === 'fr' ? 'Couverture Active' : 'Active Coverage'}
+            </span>
           </div>
         </motion.div>
       )}

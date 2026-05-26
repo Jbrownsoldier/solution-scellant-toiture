@@ -144,7 +144,9 @@ export function Navigation() {
             <LanguageToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-white hover:text-secondary transition-colors focus-visible:outline-none focus:ring-2 focus:ring-secondary rounded-lg"
+              className={`p-2 transition-colors focus-visible:outline-none focus:ring-2 focus:ring-secondary rounded-lg ${
+                isMobileMenuOpen || !isScrolled ? 'text-white' : 'text-[#1F2421]'
+              } hover:text-secondary`}
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMobileMenuOpen}
             >
@@ -181,6 +183,12 @@ export function Navigation() {
           </div>
           
           <div className="flex flex-col gap-4 mt-8">
+            <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-4">
+              <span className="text-slate-400 font-headline font-bold uppercase text-xs tracking-wider">
+                {language === 'fr' ? 'Changer de langue' : 'Switch Language'}
+              </span>
+              <LanguageToggle />
+            </div>
             <a 
               href="tel:+14383926208"
               className="w-full py-4 border border-secondary/30 text-secondary font-headline font-bold uppercase text-sm tracking-widest rounded flex justify-center items-center"
