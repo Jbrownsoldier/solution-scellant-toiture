@@ -67,26 +67,17 @@ export function HiggsfieldExtendedSections() {
          1. DYNAMIC LOOPING VIDEO BANNER (6-Second Macro Closeup)
          ═══════════════════════════════════════════════════════════════════ */}
       <section className="relative w-full h-[40vh] md:h-[60vh] min-h-[300px] md:min-h-[450px] overflow-hidden flex items-center justify-center">
-        {/* Background visual (video on desktop, static optimized image on mobile) */}
-        {isMobile ? (
-          <img
-            className="absolute inset-0 w-full h-full object-cover filter saturate-[0.95] brightness-[0.70]"
-            src="/shingles-beading.png"
-            alt="Shingles close up background"
-            loading="lazy"
-          />
-        ) : (
-          <video
-            className="absolute inset-0 w-full h-full object-cover filter saturate-[0.95] brightness-[0.70]"
-            src="/roof-water-bead.mp4"
-            poster="/shingles-beading.png"
-            autoPlay
-            muted
-            playsInline
-            loop
-            preload="auto"
-          />
-        )}
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover filter saturate-[0.95] brightness-[0.70]"
+          src="/roof-water-bead.mp4"
+          poster="/shingles-beading.png"
+          autoPlay
+          muted
+          playsInline
+          loop
+          preload="auto"
+        />
         
         {/* Dark Charcoal 20% overlay */}
         <div className="absolute inset-0 bg-[#1F2421]/20 z-10" />

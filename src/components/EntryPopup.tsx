@@ -13,12 +13,27 @@ import {
 } from 'lucide-react';
 import { useTranslation } from '../context/LanguageContext';
 import { supabase } from '../lib/supabase';
+import { translations } from '../lib/translations';
 
 export function EntryPopup() {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(1); // 1 = Promo, 2 = Form, 3 = Success
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { t, language } = useTranslation();
+  const { language } = useTranslation();
+
+  // Force French translations for the popup
+  const tFr = (key: string): string => {
+    const keys = key.split('.');
+    let value: any = translations['fr'];
+    for (const k of keys) {
+      if (value && typeof value === 'object' && k in value) {
+        value = value[k];
+      } else {
+        return key;
+      }
+    }
+    return value;
+  };
 
   const [formData, setFormData] = useState({
     name: '',
@@ -116,34 +131,34 @@ export function EntryPopup() {
             <AnimatePresence mode="wait">
               {step === 1 && (
                 <motion.div 
-                  key="step-1" 
-                  initial={{ opacity: 0, x: 20 }} 
-                  animate={{ opacity: 1, x: 0 }} 
-                  exit={{ opacity: 0, x: -20 }} 
-                  className="text-center space-y-8"
+                   key="step-1" 
+                   initial={{ opacity: 0, x: 20 }} 
+                   animate={{ opacity: 1, x: 0 }} 
+                   exit={{ opacity: 0, x: -20 }} 
+                   className="text-center space-y-8"
                 >
                   <div className="inline-flex p-3 rounded-xl bg-[#1A9E8F]/10 border border-[#1A9E8F]/20 text-[#1A9E8F] mb-2">
                     <ShieldCheck className="w-8 h-8" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight uppercase tracking-tighter">
-                    {t('entry_popup.title')} · <span className="text-[#1A9E8F]">{t('entry_popup.save')}</span> 🏠
+                    {tFr('entry_popup.title')} · <span className="text-[#1A9E8F]">{tFr('entry_popup.save')}</span> 🏠
                   </h2>
                   <p className="text-slate-300 text-sm leading-relaxed max-w-sm mx-auto">
-                    {t('entry_popup.desc')}
+                    {tFr('entry_popup.desc')}
                   </p>
                   <div className="flex flex-col gap-4">
                     <button 
                       onClick={() => setStep(2)} 
                       className="w-full py-5 bg-[#1A9E8F] text-white font-bold uppercase tracking-widest rounded-xl hover:brightness-110 active:scale-[0.98] transition-all shadow-[0_0_30px_rgba(26,158,143,0.3)] flex items-center justify-center gap-3"
                     >
-                      {t('entry_popup.cta')}
+                      {tFr('entry_popup.cta')}
                       <ArrowRight className="w-5 h-5" />
                     </button>
                     <button 
                       onClick={handleClose} 
                       className="text-slate-500 hover:text-slate-300 font-mono text-[10px] uppercase tracking-[0.2em] py-2 transition-colors"
                     >
-                      {t('entry_popup.no_thanks')}
+                      {tFr('entry_popup.no_thanks')}
                     </button>
                   </div>
                 </motion.div>
@@ -159,15 +174,13 @@ export function EntryPopup() {
                 >
                   <div className="space-y-2 text-center md:text-left">
                     <div className="text-[#1A9E8F] font-mono text-[10px] uppercase tracking-widest border-b border-[#1A9E8F]/20 pb-2 inline-block">
-                      {language === 'fr' ? 'FORMULAIRE DE RABAIS 10% // SÉCURISÉ' : '10% DISCOUNT CLAIM FORM // SECURE'}
+                      FORMULAIRE DE RABAIS 10% // SÉCURISÉ
                     </div>
                     <h2 className="text-2xl font-bold text-white uppercase tracking-tighter">
-                      {language === 'fr' ? 'Réclamer mon rabais de 10%' : 'Claim my 10% discount'}
+                      Réclamer mon rabais de 10%
                     </h2>
                     <p className="text-xs text-slate-400">
-                      {language === 'fr' 
-                        ? 'Remplissez ces informations rapides pour planifier votre évaluation gratuite et réserver votre rabais.'
-                        : 'Fill out this quick form to schedule your free evaluation and lock in your discount.'}
+                      Remplissez ces informations rapides pour planifier votre évaluation gratuite et réserver votre rabais.
                     </p>
                   </div>
 
@@ -179,7 +192,7 @@ export function EntryPopup() {
                         type="text"
                         required
                         autoComplete="name"
-                        placeholder={t('quote_modal.label_name')}
+                        placeholder={tFr('quote_modal.label_name')}
                         className="w-full bg-slate-950/50 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white focus:outline-none focus:border-[#1A9E8F]/50 focus:ring-1 focus:ring-[#1A9E8F]/20 font-mono text-xs placeholder:text-slate-600 uppercase"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -193,7 +206,7 @@ export function EntryPopup() {
                         type="tel"
                         required
                         autoComplete="tel"
-                        placeholder={t('quote_modal.label_phone')}
+                        placeholder={tFr('quote_modal.label_phone')}
                         className="w-full bg-slate-950/50 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white focus:outline-none focus:border-[#1A9E8F]/50 focus:ring-1 focus:ring-[#1A9E8F]/20 font-mono text-xs placeholder:text-slate-600 uppercase"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -207,7 +220,7 @@ export function EntryPopup() {
                         type="email"
                         required
                         autoComplete="email"
-                        placeholder={t('quote_modal.label_email')}
+                        placeholder={tFr('quote_modal.label_email')}
                         className="w-full bg-slate-950/50 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white focus:outline-none focus:border-[#1A9E8F]/50 focus:ring-1 focus:ring-[#1A9E8F]/20 font-mono text-xs placeholder:text-slate-600 uppercase"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -221,7 +234,7 @@ export function EntryPopup() {
                         type="text"
                         required
                         autoComplete="street-address"
-                        placeholder={t('quote_modal.label_address')}
+                        placeholder={tFr('quote_modal.label_address')}
                         className="w-full bg-slate-950/50 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white focus:outline-none focus:border-[#1A9E8F]/50 focus:ring-1 focus:ring-[#1A9E8F]/20 font-mono text-xs placeholder:text-slate-600 uppercase"
                         value={formData.address}
                         onChange={(e) => setFormData({ ...formData, address: e.target.value })}
@@ -236,11 +249,11 @@ export function EntryPopup() {
                       {isSubmitting ? (
                         <>
                           <Loader2 className="w-5 h-5 animate-spin" />
-                          {language === 'fr' ? 'TRANSMISSION DES DONNÉES...' : 'TRANSMITTING DATA...'}
+                          TRANSMISSION DES DONNÉES...
                         </>
                       ) : (
                         <>
-                          {language === 'fr' ? 'RÉSERVER MON RABAIS & ÉVALUATION' : 'CLAIM MY DISCOUNT & EVALUATION'}
+                          RÉSERVER MON RABAIS & ÉVALUATION
                           <ArrowRight className="w-5 h-5" />
                         </>
                       )}
@@ -267,18 +280,16 @@ export function EntryPopup() {
                     </div>
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-white uppercase tracking-tighter">
-                    {language === 'fr' ? 'Rabais Réservé !' : 'Discount Claimed!'}
+                    Rabais Réservé !
                   </h2>
                   <p className="text-slate-300 text-sm leading-relaxed max-w-sm mx-auto font-mono">
-                    {language === 'fr'
-                      ? "Merci ! Votre demande d'évaluation a été enregistrée avec le code rabais de 10%. Notre équipe vous contactera dans les 24 heures."
-                      : "Thank you! Your evaluation request has been registered with the 10% discount code. Our team will contact you within 24 hours."}
+                    Merci ! Votre demande d'évaluation a été enregistrée avec le code rabais de 10%. Notre équipe vous contactera dans les 24 heures.
                   </p>
                   <button 
                     onClick={handleClose} 
                     className="px-8 py-3 rounded-xl bg-white/10 text-white hover:bg-white/20 transition-all font-mono uppercase text-xs border border-white/5"
                   >
-                    {language === 'fr' ? 'Fermer' : 'Close'}
+                    Fermer
                   </button>
                 </motion.div>
               )}
@@ -286,7 +297,7 @@ export function EntryPopup() {
           </div>
           <div className="absolute bottom-0 right-0 p-2 opacity-10 pointer-events-none">
             <span className="text-[8px] font-mono text-white uppercase tracking-tighter">
-              {language === 'fr' ? 'RÉF : PROMO-RABAIS-10' : 'REF: PROMO-10-DISCOUNT'}
+              RÉF : PROMO-RABAIS-10
             </span>
           </div>
         </motion.div>

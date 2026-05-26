@@ -104,26 +104,17 @@ export function Hero() {
       className="hero-video-section relative w-full h-screen overflow-hidden"
     >
       {/* ── Background visual ─────────────────────────────────────────── */}
-      {isMobile ? (
-        <img
-          className="hero-video-bg object-cover w-full h-full bg-[#0E1B2A] bg-[radial-gradient(ellipse_at_center,rgba(26,158,143,0.15),transparent)]"
-          src="/roof-after.png"
-          alt="Roof sealing background"
-          fetchpriority="high"
-        />
-      ) : (
-        <video
-          className="hero-video-bg bg-[#0E1B2A] bg-[radial-gradient(ellipse_at_center,rgba(26,158,143,0.15),transparent)]"
-          src="/hero-roof-sealing.mp4"
-          poster="/roof-after.png"
-          autoPlay
-          muted
-          playsInline
-          loop
-          preload="auto"
-          aria-hidden="true"
-        />
-      )}
+      <video
+        className="hero-video-bg bg-[#0E1B2A] bg-[radial-gradient(ellipse_at_center,rgba(26,158,143,0.15),transparent)]"
+        src="/hero-roof-sealing.mp4"
+        poster="/roof-after.png"
+        autoPlay
+        muted
+        playsInline
+        loop
+        preload="auto"
+        aria-hidden="true"
+      />
 
       {/* ── Gradient overlay ── */}
       <div className="hero-video-overlay" aria-hidden="true" />
