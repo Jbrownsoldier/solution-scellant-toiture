@@ -99,22 +99,24 @@ export function Navigation() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
-            className="flex items-center relative group/logo transition-transform duration-300 hover:scale-[1.03]"
+            className="flex flex-col items-start leading-none tracking-wider group/logo transition-transform duration-300 hover:scale-[1.02] select-none"
             aria-label="Solution Scellant Toiture Home"
           >
-            {/* Soft background blue glow */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-secondary to-blue-500 rounded-xl blur-md opacity-20 group-hover/logo:opacity-35 transition-opacity duration-300 pointer-events-none"></div>
-            {/* Premium glass-like rounded-xl container */}
-            <div className="relative px-4 py-2 bg-white/95 rounded-xl border border-slate-200/50 shadow-sm flex items-center justify-center">
-              <img
-                src="/logo.jpg"
-                alt="Solution Scellant Toiture Logo"
-                className="h-16 md:h-20 w-auto object-contain"
-                loading="eager"
-                width="320"
-                height="76"
-              />
-            </div>
+            {/* Line 1: SOLUTION (Wide tracked-out, medium font-weight) */}
+            <span className={`
+              font-headline font-semibold uppercase text-[9px] md:text-[11px] tracking-[0.35em] transition-colors duration-500
+              ${isScrolled ? 'text-primary/75' : 'text-white/75'}
+            `}>
+              SOLUTION
+            </span>
+            
+            {/* Line 2: SCELLANT TOITURE (Heavy, medium-tracked, direct on background) */}
+            <span className={`
+              font-headline font-black uppercase text-[13px] md:text-[17px] tracking-[0.08em] transition-colors duration-500 mt-1.5
+              ${isScrolled ? 'text-primary' : 'text-white'}
+            `}>
+              SCELLANT TOITURE
+            </span>
           </Link>
 
           <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
