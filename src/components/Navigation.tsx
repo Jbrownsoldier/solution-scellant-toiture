@@ -11,6 +11,8 @@ export function Navigation() {
   const { openQuoteModal } = useQuoteModal();
   const { language, setLanguage, t } = useTranslation();
 
+  const isHeaderLight = isScrolled || location.pathname !== '/';
+
   const navLinks = [
     { label: t('nav.services'), path: '/services' },
     { label: t('nav.zones'), path: '/areas' },
@@ -49,7 +51,7 @@ export function Navigation() {
 
   const LanguageToggle = () => (
     <div className={`flex items-center rounded-full p-0.5 backdrop-blur-sm relative overflow-hidden transition-all duration-500 ${
-      isScrolled || isMobileMenuOpen
+      isHeaderLight || isMobileMenuOpen
         ? 'bg-slate-100 border border-slate-200/60' 
         : 'bg-white/10 border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]'
     }`}>
@@ -60,7 +62,7 @@ export function Navigation() {
         className={`px-2.5 py-1 text-[10px] font-headline font-bold uppercase tracking-wider rounded-full transition-all duration-300 relative z-10 ${
           language === 'fr' 
             ? 'text-white bg-secondary shadow-[0_2px_8px_rgba(0,102,204,0.25)]' 
-            : isScrolled || isMobileMenuOpen
+            : isHeaderLight || isMobileMenuOpen
               ? 'text-slate-500 hover:text-slate-800'
               : 'text-white/60 hover:text-white'
         }`}
@@ -74,7 +76,7 @@ export function Navigation() {
         className={`px-2.5 py-1 text-[10px] font-headline font-bold uppercase tracking-wider rounded-full transition-all duration-300 relative z-10 ${
           language === 'en' 
             ? 'text-white bg-secondary shadow-[0_2px_8px_rgba(0,102,204,0.25)]' 
-            : isScrolled || isMobileMenuOpen
+            : isHeaderLight || isMobileMenuOpen
               ? 'text-slate-500 hover:text-slate-800'
               : 'text-white/60 hover:text-white'
         }`}
@@ -87,10 +89,10 @@ export function Navigation() {
   return (
     <>
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled 
+        isHeaderLight 
           ? 'border-b border-slate-200/50 shadow-sm'
           : 'bg-transparent border-transparent'
-      }`} style={isScrolled ? { background: 'rgba(255,255,255,0.88)', backdropFilter: 'blur(24px) saturate(180%)', WebkitBackdropFilter: 'blur(24px) saturate(180%)' } : {}}>
+      }`} style={isHeaderLight ? { background: 'rgba(255,255,255,0.88)', backdropFilter: 'blur(24px) saturate(180%)', WebkitBackdropFilter: 'blur(24px) saturate(180%)' } : {}}>
         <div className="flex justify-between items-center px-6 lg:px-8 py-4 max-w-7xl mx-auto">
           <Link
             to="/"
@@ -105,7 +107,7 @@ export function Navigation() {
             {/* Line 1: SOLUTION (Wide tracked-out, medium font-weight) */}
             <span className={`
               font-headline font-semibold uppercase text-[9px] md:text-[11px] tracking-[0.35em] transition-colors duration-500
-              ${isMobileMenuOpen ? 'text-secondary/75' : isScrolled ? 'text-primary/75' : 'text-white/75'}
+              ${isMobileMenuOpen ? 'text-secondary/75' : isHeaderLight ? 'text-primary/75' : 'text-white/75'}
             `}>
               SOLUTION
             </span>
@@ -113,7 +115,7 @@ export function Navigation() {
             {/* Line 2: SCELLANT TOITURE (Heavy, medium-tracked, direct on background) */}
             <span className={`
               font-headline font-black uppercase text-[13px] md:text-[17px] tracking-[0.08em] transition-colors duration-500 mt-1.5
-              ${isMobileMenuOpen ? 'text-secondary' : isScrolled ? 'text-primary' : 'text-white'}
+              ${isMobileMenuOpen ? 'text-secondary' : isHeaderLight ? 'text-primary' : 'text-white'}
             `}>
               SCELLANT TOITURE
             </span>
@@ -130,7 +132,7 @@ export function Navigation() {
                   className={`nav-link px-2 py-1 transition-colors duration-300 ${
                     isActive 
                       ? 'active text-secondary' 
-                      : isScrolled
+                      : isHeaderLight
                         ? 'text-[#1F2421] hover:text-secondary'
                         : 'text-white/80 hover:text-white'
                   }`}
@@ -147,7 +149,7 @@ export function Navigation() {
               <a 
                 href="tel:+14383926208"
                 className={`px-6 py-2 border font-headline font-bold uppercase text-xs tracking-widest rounded transition-all duration-300 ${
-                  isScrolled
+                  isHeaderLight
                     ? 'border-secondary/30 text-secondary hover:bg-secondary hover:text-white'
                     : 'border-white/30 text-white hover:bg-white hover:text-primary'
                 }`}
@@ -170,7 +172,7 @@ export function Navigation() {
               className={`p-2 transition-colors focus-visible:outline-none focus:ring-2 focus:ring-secondary rounded-lg ${
                 isMobileMenuOpen 
                   ? 'text-[#1F2421]' 
-                  : isScrolled 
+                  : isHeaderLight 
                     ? 'text-[#1F2421]' 
                     : 'text-white'
               } hover:text-secondary`}
