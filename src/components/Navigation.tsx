@@ -49,7 +49,7 @@ export function Navigation() {
 
   const LanguageToggle = () => (
     <div className={`flex items-center rounded-full p-0.5 backdrop-blur-sm relative overflow-hidden transition-all duration-500 ${
-      isScrolled 
+      isScrolled || isMobileMenuOpen
         ? 'bg-slate-100 border border-slate-200/60' 
         : 'bg-white/10 border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]'
     }`}>
@@ -60,7 +60,7 @@ export function Navigation() {
         className={`px-2.5 py-1 text-[10px] font-headline font-bold uppercase tracking-wider rounded-full transition-all duration-300 relative z-10 ${
           language === 'fr' 
             ? 'text-white bg-secondary shadow-[0_2px_8px_rgba(0,102,204,0.25)]' 
-            : isScrolled
+            : isScrolled || isMobileMenuOpen
               ? 'text-slate-500 hover:text-slate-800'
               : 'text-white/60 hover:text-white'
         }`}
@@ -74,7 +74,7 @@ export function Navigation() {
         className={`px-2.5 py-1 text-[10px] font-headline font-bold uppercase tracking-wider rounded-full transition-all duration-300 relative z-10 ${
           language === 'en' 
             ? 'text-white bg-secondary shadow-[0_2px_8px_rgba(0,102,204,0.25)]' 
-            : isScrolled
+            : isScrolled || isMobileMenuOpen
               ? 'text-slate-500 hover:text-slate-800'
               : 'text-white/60 hover:text-white'
         }`}
