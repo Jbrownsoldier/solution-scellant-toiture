@@ -250,16 +250,16 @@ export function HiggsfieldExtendedSections() {
             <div className="absolute w-[85%] h-[85%] rounded-full border border-dashed border-secondary/30 animate-[spin_40s_linear_infinite]" />
             <div className="absolute w-[95%] h-[95%] rounded-full border border-secondary/10 animate-pulse" />
             
-            {/* The circular mist spraymist image */}
-            <div className="relative w-80 h-80 sm:w-96 sm:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-white aspect-square bg-[#F4F7F6] group cursor-pointer">
+            {/* The circular logo image container */}
+            <div className="relative w-80 h-80 sm:w-96 sm:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-white aspect-square bg-white flex items-center justify-center p-12 group cursor-pointer hover:scale-105 transition-transform duration-500">
               <img 
-                src="/technician-spray.png" 
-                alt="Friendly technician spraying protective mist shield" 
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                src="/logo.jpg" 
+                alt="Solution Scellant Toiture Logo" 
+                className="w-[85%] h-auto object-contain transform group-hover:scale-102 transition-transform duration-500"
                 loading="lazy"
+                width="320"
+                height="76"
               />
-              {/* Soft overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1F2421]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
           </div>
 

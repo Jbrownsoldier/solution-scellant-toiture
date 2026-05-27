@@ -30,13 +30,20 @@ export function AboutPage() {
       <section className="px-6 lg:px-8 py-24 bg-surface relative">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-full aspect-square max-w-[500px]">
-              <div className="absolute inset-0 border-2 border-secondary/20 rounded-xl transform rotate-3 scale-105 transition-transform hover:rotate-6"></div>
-              <div className="w-full h-full rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center p-8">
-                <Hexagon className="w-32 h-32 text-secondary opacity-20" />
+            <div className="relative w-full aspect-square max-w-[500px] group/story">
+              <div className="absolute inset-0 border-2 border-secondary/20 rounded-xl transform rotate-3 scale-105 transition-transform group-hover/story:rotate-6 duration-500"></div>
+              <div className="w-full h-full rounded-xl overflow-hidden border border-slate-200 shadow-lg bg-white flex items-center justify-center">
+                <img 
+                  src="/about-us.webp" 
+                  alt="Solution Scellant Toiture origin illustration" 
+                  className="w-full h-full object-cover transform group-hover/story:scale-103 transition-transform duration-700"
+                  loading="eager"
+                  width="1200"
+                  height="1200"
+                />
               </div>
-              <div className="absolute bottom-4 left-4 bg-primary border text-white text-xs border-secondary/30 p-2 font-mono rounded">
-                GNT-ORIGIN // 2024
+              <div className="absolute bottom-4 left-4 bg-primary/95 backdrop-blur-sm border text-white text-[10px] md:text-xs border-secondary/30 px-3 py-1.5 font-mono rounded shadow-sm">
+                SST-ORIGIN // 2026
               </div>
             </div>
           </div>
