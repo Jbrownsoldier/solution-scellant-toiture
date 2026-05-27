@@ -194,7 +194,7 @@ export function HiggsfieldExtendedSections() {
           <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 flex flex-col bg-white group cursor-pointer lg:aspect-[4/3]">
             {/* Glistening Shingles Closeup Image */}
             <img 
-              src="/shingles-beading.png" 
+              src="/shingles-beading.webp" 
               alt="Glistening shingles close up with water drops" 
               className="w-full h-48 sm:h-64 lg:h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               loading="lazy"
