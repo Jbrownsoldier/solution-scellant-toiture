@@ -27,23 +27,23 @@ export function SavingsCalculator() {
   const lifeExtensionYears = roofAge <= 15 ? '10 - 15' : '5 - 10';
 
   return (
-    <section className="py-24 bg-primary border-t border-white/5 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-primary border-t border-white/5 relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-[#0E1B2A]/30 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[300px] bg-secondary/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-16 max-w-2xl mx-auto">
-          <span className="text-secondary font-headline uppercase font-black tracking-widest text-xs md:text-sm mb-4 block flex items-center justify-center gap-2">
+        <div className="text-center mb-12 md:mb-16 max-w-2xl mx-auto">
+          <span className="text-secondary font-headline uppercase font-black tracking-widest text-xs md:text-sm mb-3 block flex items-center justify-center gap-2">
             <DollarSign className="w-4 h-4 text-secondary" />
             {language === 'fr' ? 'CALCULATEUR FINANCIER & ÉCO' : 'FINANCIAL & ECO CALCULATOR'}
           </span>
-          <h2 className="font-headline text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
+          <h2 className="font-headline text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-tight">
             {language === 'fr' ? 'SIMULEZ VOS ÉCONOMIES IMMÉDIATES' : 'CALCULATE YOUR INSTANT SAVINGS'}
           </h2>
-          <p className="text-slate-400 text-sm md:text-base">
+          <p className="text-slate-400 text-sm md:text-base px-2">
             {language === 'fr' 
               ? "Découvrez combien vous économisez par rapport à un remplacement de toiture complet et l'impact écologique positif de votre choix." 
               : "Discover how much you save compared to a full roof replacement and the positive ecological impact of your choice."
@@ -52,15 +52,15 @@ export function SavingsCalculator() {
         </div>
 
         {/* Calculator Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
           
           {/* Controls (Left side - 5 cols) */}
-          <div className="lg:col-span-5 bg-slate-900/60 border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col justify-between backdrop-blur-sm shadow-[0_15px_30px_rgba(0,0,0,0.4)]">
-            <div className="space-y-8">
+          <div className="lg:col-span-5 bg-slate-900/60 border border-white/10 rounded-2xl p-5 md:p-8 flex flex-col justify-between backdrop-blur-sm shadow-[0_15px_30px_rgba(0,0,0,0.4)]">
+            <div className="space-y-6 md:space-y-8">
               
               {/* Size Slider */}
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
+              <div className="space-y-3">
+                <div className="flex justify-between items-center flex-wrap gap-1">
                   <label className="text-white font-mono text-xs uppercase tracking-widest text-slate-300">
                     {language === 'fr' ? 'Superficie du toit' : 'Roof Area'}
                   </label>
@@ -68,15 +68,17 @@ export function SavingsCalculator() {
                     {roofSize.toLocaleString()} sq. ft. ({Math.round(roofSize * 0.0929)} m²)
                   </span>
                 </div>
-                <input 
-                  type="range"
-                  min="500"
-                  max="5000"
-                  step="100"
-                  value={roofSize}
-                  onChange={(e) => setRoofSize(Number(e.target.value))}
-                  className="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#1A9E8F] transition-all"
-                />
+                <div className="py-2">
+                  <input 
+                    type="range"
+                    min="500"
+                    max="5000"
+                    step="100"
+                    value={roofSize}
+                    onChange={(e) => setRoofSize(Number(e.target.value))}
+                    className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer outline-none transition-all py-2 bg-clip-content [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#1A9E8F] [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:transition-all [&::-webkit-slider-thumb]:hover:scale-110 [&::-webkit-slider-thumb]:active:scale-95 [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-[#1A9E8F] [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-white [&::-moz-range-thumb]:shadow-lg [&::-moz-range-thumb]:transition-all [&::-moz-range-thumb]:hover:scale-110 [&::-moz-range-thumb]:active:scale-95"
+                  />
+                </div>
                 <div className="flex justify-between text-[10px] text-slate-500 font-mono">
                   <span>500 sq ft</span>
                   <span>5,000 sq ft</span>
@@ -84,8 +86,8 @@ export function SavingsCalculator() {
               </div>
 
               {/* Age Selector */}
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
+              <div className="space-y-3">
+                <div className="flex justify-between items-center flex-wrap gap-1">
                   <label className="text-white font-mono text-xs uppercase tracking-widest text-slate-300">
                     {language === 'fr' ? 'Âge des bardeaux' : 'Shingle Age'}
                   </label>
@@ -93,15 +95,17 @@ export function SavingsCalculator() {
                     {roofAge} {language === 'fr' ? 'ans' : 'years'}
                   </span>
                 </div>
-                <input 
-                  type="range"
-                  min="5"
-                  max="25"
-                  step="1"
-                  value={roofAge}
-                  onChange={(e) => setRoofAge(Number(e.target.value))}
-                  className="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#1A9E8F] transition-all"
-                />
+                <div className="py-2">
+                  <input 
+                    type="range"
+                    min="5"
+                    max="25"
+                    step="1"
+                    value={roofAge}
+                    onChange={(e) => setRoofAge(Number(e.target.value))}
+                    className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer outline-none transition-all py-2 bg-clip-content [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#1A9E8F] [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:transition-all [&::-webkit-slider-thumb]:hover:scale-110 [&::-webkit-slider-thumb]:active:scale-95 [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-[#1A9E8F] [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-white [&::-moz-range-thumb]:shadow-lg [&::-moz-range-thumb]:transition-all [&::-moz-range-thumb]:hover:scale-110 [&::-moz-range-thumb]:active:scale-95"
+                  />
+                </div>
                 <div className="flex justify-between text-[10px] text-slate-500 font-mono">
                   <span>5 {language === 'fr' ? 'ans' : 'years'}</span>
                   <span>25 {language === 'fr' ? 'ans' : 'years'}</span>
@@ -111,9 +115,9 @@ export function SavingsCalculator() {
             </div>
 
             {/* Note banner */}
-            <div className="mt-8 bg-slate-950/50 rounded-xl p-4 border border-white/5 flex items-start gap-3">
-              <BadgeInfo className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-              <p className="text-[11px] text-slate-500 leading-relaxed">
+            <div className="mt-6 md:mt-8 bg-slate-950/50 rounded-xl p-4 border border-white/5 flex items-start gap-3">
+              <BadgeInfo className="w-5 h-5 text-[#1A9E8F] flex-shrink-0 mt-0.5" />
+              <p className="text-[11px] text-slate-400 leading-relaxed">
                 {language === 'fr'
                   ? "Calculs fondés sur le tarif moyen de remplacement de toiture au Québec en 2026. L'inspection technique gratuite valide l'admissibilité du bardeau."
                   : "Estimates based on average 2026 Quebec roof replacement contract values. Free technical inspection validates actual shingle qualification."
@@ -123,43 +127,43 @@ export function SavingsCalculator() {
           </div>
 
           {/* Results (Right side - 7 cols) */}
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-stretch">
             
             {/* Primary Net Savings Card (Full Span inside right side) */}
-            <div className="md:col-span-2 bg-gradient-to-br from-slate-900 to-[#0F2D33]/40 border border-[#1A9E8F]/30 rounded-2xl p-6 md:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_15px_30px_rgba(26,158,143,0.1)]">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl" />
+            <div className="md:col-span-2 bg-gradient-to-br from-slate-900 to-[#0F2D33]/40 border border-[#1A9E8F]/30 rounded-2xl p-5 md:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_15px_30px_rgba(26,158,143,0.1)]">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl pointer-events-none" />
               <div>
-                <span className="text-secondary font-headline text-xs font-bold uppercase tracking-widest block mb-2">
+                <span className="text-[#1A9E8F] font-headline text-xs font-bold uppercase tracking-widest block mb-2">
                   {language === 'fr' ? 'ÉCONOMIES NETTES ESTIMÉES' : 'ESTIMATED NET SAVINGS'}
                 </span>
-                <div className="flex items-baseline gap-2">
+                <div className="flex flex-wrap items-baseline gap-3">
                   <span className="text-4xl md:text-6xl font-headline font-black text-white leading-none">
                     ${netSavings.toLocaleString()}
                   </span>
-                  <span className="text-secondary font-mono font-bold text-xs uppercase tracking-wider bg-secondary/15 px-2.5 py-1 rounded-full border border-secondary/20">
+                  <span className="text-[#1A9E8F] font-mono font-bold text-xs uppercase tracking-wider bg-[#1A9E8F]/15 px-2.5 py-1 rounded-full border border-[#1A9E8F]/20">
                     {language === 'fr' ? 'Épargne de 80 %' : '80% Saved'}
                   </span>
                 </div>
               </div>
 
-              <div className="mt-6 border-t border-white/5 pt-6 flex flex-col sm:flex-row justify-between gap-4">
+              <div className="mt-6 border-t border-white/5 pt-6 flex flex-col sm:flex-row justify-between gap-6 sm:gap-4">
                 <div>
                   <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider">
                     {language === 'fr' ? 'Coût Remplacement complet' : 'Full Replacement Cost'}
                   </p>
                   <p className="text-slate-400 font-mono text-sm font-bold line-through">${replacementCost.toLocaleString()}</p>
                 </div>
-                <div>
-                  <p className="text-[10px] text-secondary font-mono uppercase tracking-wider">
+                <div className="flex-1 sm:max-w-[70%]">
+                  <p className="text-[10px] text-[#1A9E8F] font-mono uppercase tracking-wider">
                     {language === 'fr' ? 'Coût de notre scellant' : 'Our Sealing Treatment Cost'}
                   </p>
                   <button 
                     onClick={openQuoteModal}
-                    className="text-white font-headline text-xs font-black uppercase tracking-wider bg-[#00A896]/20 border border-[#00A896]/40 px-3 py-1.5 rounded-lg hover:bg-[#00A896] hover:text-white transition-all animate-pulse mt-1.5 cursor-pointer block text-left"
+                    className="w-full sm:w-auto text-center text-white font-headline text-xs font-black uppercase tracking-wider bg-[#00A896]/20 border border-[#00A896]/40 px-4 py-2.5 rounded-lg hover:bg-[#00A896] hover:text-white transition-all animate-pulse mt-2 cursor-pointer block"
                   >
                     {language === 'fr' 
-                      ? 'ÉVALUATION GRATUITE REQUISE (Économisez des milliers $)' 
-                      : 'FREE EVALUATION REQUIRED (Save thousands $)'
+                      ? 'ÉVALUATION GRATUITE' 
+                      : 'FREE EVALUATION'
                     }
                   </button>
                 </div>
@@ -167,7 +171,7 @@ export function SavingsCalculator() {
             </div>
 
             {/* Ecological Impact Card */}
-            <div className="bg-slate-900/60 border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/20 transition-all">
+            <div className="bg-slate-900/60 border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col justify-between hover:border-emerald-500/20 transition-all">
               <div className="flex items-start justify-between">
                 <div>
                   <span className="text-emerald-400 font-headline text-[10px] font-bold uppercase tracking-widest block mb-1">
@@ -190,7 +194,7 @@ export function SavingsCalculator() {
             </div>
 
             {/* Life Extension Card */}
-            <div className="bg-slate-900/60 border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-cyan-500/20 transition-all">
+            <div className="bg-slate-900/60 border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col justify-between hover:border-cyan-500/20 transition-all">
               <div className="flex items-start justify-between">
                 <div>
                   <span className="text-cyan-400 font-headline text-[10px] font-bold uppercase tracking-widest block mb-1">
@@ -220,7 +224,7 @@ export function SavingsCalculator() {
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-8 bg-amber-500/10 border border-amber-500/30 rounded-2xl p-5 flex items-start gap-4"
+            className="mt-6 md:mt-8 bg-amber-500/10 border border-amber-500/30 rounded-2xl p-4 md:p-5 flex flex-col sm:flex-row items-start gap-3 md:gap-4"
           >
             <ShieldAlert className="w-6 h-6 text-amber-500 flex-shrink-0 mt-0.5" />
             <div>
